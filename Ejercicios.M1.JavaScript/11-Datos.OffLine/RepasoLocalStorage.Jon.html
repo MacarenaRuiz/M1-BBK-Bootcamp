@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <input type="text" id="favorito">
+    <button onclick="guardarFavoritos()">Click</button>
+
+
+    <script>
+
+        /* 
+        Ejemplos 1: 
+         let arrayFavoritos = ["Pikachu", "El retonor del rey", "kas naranja"];
+  
+          /*Paso 1 let arrayEnJSON = JSON.stringify(arrayFavoritos);
+          /*Paso 2  localStorage.setItem("favorito", arrayEnJSON);
+  
+          /*Paso 3  let favoritos = localStorage.getItem("favorito");
+          /*Paso 4 favoritos = JSON.parse(favoritos); 
+
+          Finaliza Ejemplo 1 
+        */
+
+
+        /*
+        Ejemplo 2
+        favorito: es lo que escribe el usuario
+        favoritos: (arrayFvaoritos) es la lista donde se va a guardar todo lo que el usuario escriba */
+
+
+        let arrayFavoritos = JSON.parse(localStorage.getItem("favorito"));
+
+        if (arrayFavoritos === null) {
+            arrayFavoritos = [];
+        }
+
+
+        function guardarFavoritos() {
+            let favorito = document.getElementById("favorito").value;
+
+            arrayFavoritos.push(favorito);
+
+
+        /*Paso 1*/ let arrayEnJSON = JSON.stringify(arrayFavoritos); //Convertimos el arrayFavoritos en JSON.stringify, declarando una variable
+        /*Paso 2*/  localStorage.setItem("favorito", arrayEnJSON); //valor es el array convertido en json, con la variable declarada (let arrayEnJSON)
+
+        /*Paso 3*/ let favoritos = localStorage.getItem("favorito"); //Declara una variable
+        /*Paso 4*/ favoritos = JSON.parse(favoritos);
+        }
+    </script>
+
+</body>
+
+</html>

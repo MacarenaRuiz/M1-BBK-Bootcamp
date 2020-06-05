@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<h2> Ejercicio 4 - Array Repaso</h2>
+<div id="resultado"></div>
+
+    <script>
+
+        //Crear un array. Usar un for para pedir al usuario que introduzca valores a cada una de las posiciones. Usar otro for para mostrarlos en pantalla.
+
+        let animales = [];
+
+        for (i = 0; i < 5; i++) {
+            animales[i] = window.prompt('Introduce animales');
+            console.log(animales[i]);
+            document.getElementById("resultado").innerHTML += `<div>${animales[i]}</div>`;
+        }
+        console.log(animales);
+    </script>
+</body>
+
+</html>

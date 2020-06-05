@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .verde {
+            color: green;
+        }
+
+        .amarillo {
+            color: greenyellow;
+        }
+
+        .rojo {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Ejercicio 4 - Objetos Repaso</h2>
+    <p id="parrafo"></p>
+    <script>
+
+        let numero = parseInt(window.prompt('Introduce un número'));
+
+        if (numero < 100) {
+            console.log(numero);
+            document.getElementById("parrafo").innerHTML += `<p class="verde">${numero} es menor que 100.</p>`;
+        }
+        else if (numero > 100 && numero < 200) {
+            console.log(numero);
+            document.getElementById("parrafo").innerHTML += `<p class="amarillo">${numero}, se encuentra entre 100 y 200.</p>`;
+        }
+        else if (numero > 100) {
+            console.log(numero);
+            document.getElementById("parrafo").innerHTML += `<p class="rojo">${numero}, es mayor que 200.</p>`;
+        }
+    </script>
+</body>
+
+</html>

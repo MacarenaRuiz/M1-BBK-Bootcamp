@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let numero;
+        numero = parseInt(window.prompt('dime un número'));
+
+        let numero1;
+        numero1 = parseInt(window.prompt('dime otro número'));
+
+        let resto;
+        resto = (numero % 6);
+
+        let resto1;
+        resto1 = (numero1 % 6);
+
+
+
+        if (numero === numero1) {
+            window.alert(0);
+        }
+        else if (resto === resto1) {
+// si tienes el mismo resto, indican el numero menor.
+            if (numero < numero1) {
+                window.alert(numero + ' es el numero menor');
+            }
+            else {
+                window.alert(numero1 + ' es el numero menor');
+            }
+
+
+// si no tienen el mismo resto, hay que indicar el numero mayor.
+        }
+        if (numero > numero1) {
+            window.alert(numero + ' es el número mayor');
+        }
+        else if (numero < numero1) {
+
+            window.alert(numero1 + ' es el número mayor')
+        }
+
+
+    </script>
+</body>
+
+</html>

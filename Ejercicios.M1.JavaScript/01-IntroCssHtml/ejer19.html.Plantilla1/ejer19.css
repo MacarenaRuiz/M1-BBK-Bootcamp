@@ -1,0 +1,110 @@
+
+            header {
+                display: flex;   
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: whitesmoke;
+                align-items: center;
+            }
+            .h1 {
+             margin-bottom: 5px;
+            }
+       
+
+            .h2 {
+                color: black;
+                text-align: center;
+                text-combine-upright: 0px;
+                margin-top: 5px;
+                font-size: 8px;
+            }
+
+            .primer-parrafo {
+            margin-left: 30%;
+              font-style: italic;
+              align-items: center;
+              width: 40%
+            }
+            .our-services {
+                margin-top: 0px;
+                display: flex;
+                flex-direction: row ;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 25px;
+                width: fit-content;
+            }
+
+            .serv1 {
+                display: flex;
+                flex-direction: row;
+               align-items: center;
+               justify-content: center;  
+            }
+            .serv2 {
+                display: flex;
+                flex-direction: row;
+               align-items: center;
+               justify-content: center;   
+            }
+            .serv3 {
+                display: flex;
+                flex-direction: row;
+               align-items: center;
+               justify-content: center; 
+            }
+
+            .tittle {
+                margin-left: 45%;
+                margin-right: 45%;
+                margin-bottom: 5px;
+                font-size: 20px;
+                text-transform: capitalize;
+                font-style: normal;
+                color:white;
+                background-color: red;
+                border-radius: 6px;
+            }
+            
+            .our-players-images {
+             display: flex;
+             flex-direction: row;
+             align-items: center;
+             margin-right: 20px;
+            }
+
+            a {
+                color:white;
+                background-color: red;
+                border-radius: 40px;
+                border-style: none;
+                padding: 10px;
+            }
+
+          
+         
+            .Profile { 
+                color: red;
+            }
+            .images {
+                justify-content: center;
+            }
+           
+            .ar-images {
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: row;
+                  }
+
+.ima {
+    align-items: right;
+}
+
+
+            .Metuervestas {
+                display: flex;
+                flex-direction: column;
+                justify-content: right;
+                width: 100px;
+                float: left;
+                }

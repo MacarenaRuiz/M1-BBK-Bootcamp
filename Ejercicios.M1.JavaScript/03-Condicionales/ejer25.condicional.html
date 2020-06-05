@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let nombre = window.prompt('Cuál es tu nombre');
+        let ventas = parseInt(window.prompt('Introduce el precio de las ventas'));
+        let extra = (ventas * 0.05);
+
+        if (ventas < 500) {
+            window.alert(nombre + ' las ventas obtenidas son ' + ventas);
+        }
+        else if (ventas > 500) {
+            window.alert(nombre + ' las ventas obtenidas son ' + (extra + ventas));
+        }
+    </script>
+</body>
+
+</html>

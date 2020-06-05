@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="principal">
+    </div>
+
+    <script>
+        
+
+        let helados;
+        helados = parseInt(window.prompt('Cuántos helados quieres comprar?'));
+        console.log(helados);
+
+        let precio;
+        precio = helados * 2;
+
+        console.log('Has comprado ' + helados + ' helados, y cada helado vale 2€, por lo que te has gastado ' + precio + ' euros.')
+
+        if (helados > 10) {
+            console.log('nos regalan un helado, además de los ' + helados + ' que hemos comprado.');
+        }
+        else {
+            console.log('No nos regalan ningún helado por comprar menos de 10.')
+        }
+
+
+
+     
+    
+        /*
+      
+        //  helados >=10 ? helados+=1 : helados=helados;
+
+        helados >= 10 ? principal.innerHTML = `<h1> Te llevas ${helados + 1} helados por un precio de </h1>` : principal.
+            innerHTML = ` <h1> Te llevas ${helados} helados por un precio de ${helados * precio} </h1>`;
+
+*/
+            
+    </script>
+</body>
+
+</html>

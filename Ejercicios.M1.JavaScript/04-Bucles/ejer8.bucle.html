@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // Usamos WHILE porq no sabemos el número de repeticiones que vamos a ejecutar.
+        /* 
+               let numero = parseInt(window.prompt('Dame un número'));
+       
+               let suma = numero;
+                 // inicio de la variable
+                  while (numero !== 0) {                                         // condición
+                      numero = parseInt(window.prompt('Dame otro número'));      // expresion 
+          
+                      if (numero > 0) {
+                          suma = numero + suma;
+                      }
+          
+                      else if (numero < 0) {
+          
+                          window.alert('Se ignoran los valores negativos');
+          
+                      }
+                  }
+          
+                  window.alert(suma);
+          */
+
+
+        let numero;          // La variable se declara siempre fuera de las llaves.
+        let suma = 0;
+
+        do {
+            numero = parseInt(window.prompt('Dame un número'));
+            if (numero > 0) {
+                suma = numero + suma;
+            }
+
+            else if (numero < 0) {
+
+                window.alert('Se ignoran los valores negativos');
+
+            }
+
+        } while (numero !== 0);
+        window.alert(suma);
+
+
+        
+    </script>
+</body>
+
+</html>

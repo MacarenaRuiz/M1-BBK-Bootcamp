@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .verde {
+            color: green;
+        }
+
+        .amarillo {
+            color: greenyellow;
+        }
+
+        .rojo {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="parrafo"></p>
+
+    <script>
+        /*4.	Crea una página con un párrafo vacío. Al entrar en la página se le preguntará al usuario que introduzca un número. Inserta ese número en el párrafo vacío. Si el número es menor que 100, el número tendrá color verde, si el número es entre 100 y 200 tendrá color amarillo. Si el número es mayor que 200, tendrá color rojo.*/
+
+
+
+
+
+        let parrafo = parseInt(window.prompt('Introduce un número'));
+        let cadena = document.getElementById("parrafo");
+
+        if (parrafo < 100) {
+            //color verde
+
+            //document.getElementById("parrafo").innerHTML += `<p class="verde">${parrafo}</p>`;
+            cadena.innerHTML = `<p class="verde">${parrafo}</p>`;
+
+        }
+        else if (parrafo > 100 && parrafo < 200) {
+            // color amarillo
+
+            document.getElementById("parrafo").innerHTML += `<p class="amarillo">${parrafo}</p>`;
+
+        }
+        else if (parrafo > 200) {
+            //color rojo
+            document.getElementById("parrafo").innerHTML += `<p class="rojo">${parrafo}</p>`;
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

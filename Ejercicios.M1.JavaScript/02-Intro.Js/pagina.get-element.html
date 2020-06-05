@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+
+    <style>
+        #parrafo-nombre {
+            color: red;
+        }
+
+        #titulo {
+            color: aqua;
+        }
+
+        #palabra {
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Título</h1>
+    <p id="parrafo-nombre">Texto</p>
+    <p id="titulo"></p>
+
+    <div>
+        <div id="palabra">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, nisi.
+        </div>
+    </div>
+
+
+    <script>
+
+        let nombre = window.prompt('Cómo te llamas?');
+        document.getElementById('parrafo-nombre').innerHTML = `<h1>Hola</h1>` + `welcome` + ` ${nombre}`;
+
+
+
+        let edad = window.prompt('Qué edad tienes');
+        document.getElementById('titulo').innerHTML = `<h1> ${edad} años </h1>`;
+
+
+        document.getElementById('palabra').innerHTML = `<h1> ${palabra} </h1>`;
+
+    </script>
+
+
+</body>
+
+</html>

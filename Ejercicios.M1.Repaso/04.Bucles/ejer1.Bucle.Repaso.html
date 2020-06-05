@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+
+<body>
+    <div id="Respuesta">
+    </div>
+    <script>
+        let edad = parseInt(window.prompt('Qué edad tienes?'));
+          let felicitacion = ('Feliz cumpleaños')
+      
+          for (i = 1; i<= edad; i = i + 1){
+        console.log(felicitacion + i);
+      document.getElementById('Respuesta').innerHTML += `<div>${felicitacion+i}</div>`
+          }
+ 
+/* Pedimos la edad, y una vez que tengamos la edad, creamos un bucle que se repita tantas veces como años tenga el usuario. Y que cada vez que se ejecute que nos muestre por pantalla la felicitación.
+Hemos usado el bucle for, inicializamos la variable i en 0, después viene la condición (i<edad), es decir, el bucle se repetirá siempre y cuando se cumpla que edad es mayor que i, si por ejemplo el bucle es 10, se repetirá desde 0 a 9, es decir, 10 veces, y en cada vuelta ejecutará las líneas de código que hay dentro de los corchetes.
+
+En cada vuelta, se va incrementando en uno el valor de i (i++), que es lo mismo que (i+1). */
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Pedir al usuario que introduzca 'p' o 'i'
+        //Si introduce otra cosa que no es ni 'p' ni 'i', volverle a preguntar 
+        //Todos los valores pares del 0 al 100
+        //Todos los valores impares del 0 al 100 
+
+
+let valor;
+
+        do {
+            valor = window.prompt('Introduce "p" o "i"');
+            if (valor === 'p') {
+                for (i = 2; i <= 100; i = i + 2) {
+                    console.log(i);
+                }
+
+            }
+
+            else if (valor === 'i') {
+                for (i = 1; i < 100; i = i + 3) {
+                    console.log(i);
+                }
+
+            }
+            else if (valor !== 'p' || valor !== 'i') {
+                window.alert('Ese valor no es correcto, hay que introducir "i" o "p"');
+            }
+        }while (valor !== 'p' || valor !== 'i')
+
+
+    </script>
+</body>
+
+</html>

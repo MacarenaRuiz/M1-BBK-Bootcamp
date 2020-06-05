@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9.1 Bucles</title>
+</head>
+
+<body>
+    <h2>Ejercicio 9.1 Bucles - repaso</h2>
+    <div id="resultado">Resultado</div>
+    <script>
+        /* let saludo = (window.prompt('Dime una palabra').toLowerCase());
+
+
+         for (i = 0; i < saludo.length; i=i+1)  {
+             console.log (saludo.substring(i, i+1));
+         }
+
+
+        let saludo;
+        do {
+            window.alert('Hola');
+            saludo = window.prompt('Te vuelvo a saludar?');
+        }
+
+        while (saludo.toLowerCase === 'si');
+        */
+
+        //Escribe un programa que muestre todos los valores pares o impares entre 1 y 100 dependiendo de si el usuario introduce P o I .
+        //Si introduce otra cosa, decir que ese valor no es correcto y pedirle otra vez. 
+
+        let respuesta = window.prompt('Responde "P" para los pares y "I" para los impares').toUpperCase();
+        //console.log(respuesta);
+
+
+        if (respuesta === 'P') {
+            for (i = 0; i < 100; i = i + 2) {
+                //console.log(i + 2)
+                document.getElementById("resultado").innerHTML += `<div>${i + 2}</div>`;
+            }
+
+        }
+        else if (respuesta === 'I') {
+            for (i = 1; i < 100; i = i + 2) {
+                if (i % 2 !== 0) {
+                    //console.log(i)
+                    document.getElementById("resultado").innerHTML += `<div>${i}</div>`;
+                }
+            }
+        }
+
+        else if (respuesta !== 'P' || respuesta !== 'I') {
+            window.alert('Debe introducir "P" o "I"');
+        }
+
+
+    </script>
+</body>
+
+</html>

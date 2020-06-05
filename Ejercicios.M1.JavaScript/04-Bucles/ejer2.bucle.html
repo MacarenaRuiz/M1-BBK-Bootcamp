@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+/* Estamos sumando por el mismo numero, es decir, segunda vuelta 1(resultado)+2(segunda vuelta)=3, en la tercera vuelta 3(resultado)+3=6, cuarta vuelta 6+4(vuelta)= 10, quinta vuelta 10(resultado anterior)+5=15, sexta vuelta 15(resultado)+6(sexta vuelta)=21....
+
+*/
+
+        let numero = parseInt(window.prompt('Dime un número'));
+        let suma = 0;
+        i=0;
+       
+        for (i = 0; i <= numero; i = i + 1) {
+           
+            console.log(suma = i + numero++)
+        }
+/*
+vuelta      resultado        suma
+1             6               6 (0+respuesta)
+2             4               10
+3             3               13
+4             5               18
+5             2               20
+6             3               23
+
+*/
+
+    </script>
+</body>
+
+</html>

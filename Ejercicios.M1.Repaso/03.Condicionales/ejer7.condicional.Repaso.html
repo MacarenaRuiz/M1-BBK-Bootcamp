@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let diaSemana = window.prompt ('Dime un dia de la semana');
+        let cambioVariable = diaSemana.toLocaleLowerCase();              //Si queremos cambiarlo a .toLocalUpperCase, tenemos que cambiar los strings de los case a Mayusculas.
+
+        switch (cambioVariable){
+            case 'lunes': window.alert ('Hoy es lunes');
+            break;
+            case 'martes': window.alert ('Hoy es martes');
+            break;
+            case 'miercoles': window.alert ('Hoy es miercoles');
+            break;
+            case 'jueves': window.alert ('Hoy es jueves');
+            break;
+            case 'viernes': window.alert ('Hoy es viernes');
+            break;
+            case 'sabado': ;
+            case 'domingo': window.alert ('Es fin de Semana');
+            break;
+        }
+
+
+
+    </script>
+</body>
+</html>

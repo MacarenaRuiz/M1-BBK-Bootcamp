@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let temperatura;
+        temperatura = parseInt(window.prompt('Qué temperatura hace hoy?'));
+
+        if (temperatura > 40) {
+            window.alert('vete a otro sitio');
+        }
+        else if (temperatura > 30) {
+            window.alert('enciende el aire acondicionado');
+        }
+        else if (temperatura < 40) {
+            window.alert('enciende el aire acondicionado');
+        }
+        else if (temperatura < 30) {
+            window.alert('no hagas nada');
+        }
+        else if (temperatura > 20) {
+            window.alert('no hagas nada');
+        }
+        else if (temperatura > 10) {
+            window.alert('enciende la calefaccion');
+        }
+        else if (temperatura < 20) {
+            window.alert('enciende la calefaccion');
+        }
+        else if (temperatura < 10) {
+            window.alert('vete a otro sitio');
+        }
+        else {
+            console.log('quedate quieto');
+        }
+
+
+
+        /* else if (temperatura>30 && temeperatura<30){
+            window.alert ('enciende el aire acondicionado')
+        }
+        else if (temperatura<30 && temperatura >30){
+            window.alert ('no hagas nada')
+        }
+        ...
+        */
+    </script>
+</body>
+
+</html>

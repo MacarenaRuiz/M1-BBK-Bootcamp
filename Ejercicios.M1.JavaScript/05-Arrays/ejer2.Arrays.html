@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Resultado ejercicio 2 - Arrays</h4>
+    <div id="nombre">
+
+    </div>
+
+    <script>
+        //Crear un array
+        //Pedir al usuario 3 veces un string
+        //Guardar los strings en posición 0,1 y 2
+        //Mostrar en pantalla posición 1, 2 y 0
+
+        let nombre = [];  //creando una lista de un array
+
+        for (i = 0; i < 3; i++) {
+            nombre[i] = window.prompt('Dame un nombre');  //Guardamos cada nombre en la posición [i]
+
+        }
+        console.log(nombre[1]);
+        document.getElementById("nombre").innerHTML += `<div>Es el nombre:${nombre[1]} en la posición cero.</div>`;
+        console.log(nombre[2]);
+        document.getElementById("nombre").innerHTML += `<div>Es el nombre:${nombre[2]} en la posición 2.</div>`;
+        console.log(nombre[0]);
+        document.getElementById("nombre").innerHTML += `<div>Es el nombre:${nombre[0]} en la posición cero.</div>`;
+    </script>
+</body>
+
+</html>

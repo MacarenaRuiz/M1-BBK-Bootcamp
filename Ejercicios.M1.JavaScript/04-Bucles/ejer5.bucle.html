@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Resultado </h1>
+    <div id="resultado">
+        <p></p>
+    </div>
+
+    <script>
+
+
+        let numero = parseInt(window.prompt('Introduce un número'));
+        let suma = 0;
+        let i;
+
+        // Mientras no me des un cero, da vueltas hasta el numero introducido
+        while (numero !== 0) {
+
+            for (i = 0; i <= numero; i = i + 1) {
+                suma = suma + i;
+
+
+                //document.getElementById('resultado').innerHTML += `<div><p>${numero}-${suma}<p><div>`;
+
+            }
+            console.log(suma);
+            numero = parseInt(window.prompt('Introduce un número'));
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

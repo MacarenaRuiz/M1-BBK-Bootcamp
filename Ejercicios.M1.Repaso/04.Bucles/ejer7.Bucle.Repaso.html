@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+p{
+color:crimson;
+font-size: 50px;
+border-style: dotted;
+border-color: darkgreen;
+
+}
+
+    </style>
+</head>
+<p id='resultados'></p>
+<p></p>
+<body>
+    <script>
+let i;
+let valor;
+        for (i=20; i>=10 ; i = i - 1){
+            console.log (i)
+
+            document.getElementById('resultados').innerHTML+=`<p>el valor de la vuelta es = ${i}</p>`;
+        }
+    </script>
+</body>
+</html>

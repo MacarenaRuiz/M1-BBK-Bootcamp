@@ -1,0 +1,39 @@
+ 
+        /* display:   Utilizar elementos dentro de un contenedor, hay que poner flex en display.
+                flex-direction: row or column
+                justify-content: especificamos si los queremos al principio (flex-start), final (flex-end), centrados con separaciones (space-between)
+                background-color: 
+                padding-top: 
+                padding-right: 36px;
+                padding-bottom: 10px;
+                padding-left: 36px;
+                align-items: alinear los elementos secundarios. Para que ocupen todo (stretch), centrados (center), principio (start) y final (end); */
+
+            header {
+                display: flex;    
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: green;
+                padding-top: 10px;
+                padding-right: 36px;
+                padding-bottom: 10px;
+                padding-left: 36px;
+                align-items: center;
+            }
+
+            h1 {
+                color: white;
+            }
+
+            a {
+                background-color: white;
+                color: green;
+                border: 15px;
+                border-radius:  15px;
+                text-decoration: none;
+                padding : 10px;
+            }
+    
+
+         /* Border-radius: darle forma al borde
+              text-decoration: none, para quitar el subrayado */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Ejercicio 8 - Funciones</h4>
+    <div id="factorial"></div>
+    <script>
+        /*	Crea una aplicación que nos calcule el factorial de un número pedido por teclado, lo realizará mediante un método al que le pasamos el número como parámetro. Para calcular el factorial, se multiplica los números anteriores hasta llegar a uno. Por ejemplo, si introducimos un 5, realizará esta operación 5*4*3*2*1=120. Mostrar el resultado en un alert. */
+
+
+        function numero(valor, factorial) {
+            valor = parseInt(window.prompt('Dime un valor'));
+            factorial = 1;   //Empieza con 1, porq todo multiplicado por cero es cero.
+            for (i = 1; i <= valor; i++) {
+                factorial = factorial * i; //En cada vuelta acumulo el resultado de la vuelta anterior
+            }
+
+            window.alert(factorial);
+            document.getElementById("factorial").innerHTML += `<div>${factorial} es el resultado factorial del número introducido por el usuario.</div>`;
+        }
+
+        numero()
+    </script>
+</body>
+
+</html>

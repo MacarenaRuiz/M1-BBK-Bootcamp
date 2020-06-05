@@ -1,0 +1,23 @@
+
+
+            </p>
+        </h4>
+    </div>
+    <script>
+        let numero = parseInt(window.prompt('Dame un número'));
+        let acumulado = 0;      // let acumalado = acumalado + i; ----> No se puede poner, porq el i no existe fuera del bucle FOR
+
+        for (i = 0; i <= numero; i = i + 1) {
+            console.log(acumulado = acumulado + i);
+            document.getElementById('acumulado').innerHTML += `<div><h4><p><div>${acumulado}</div></p></h4></div>`;
+        }
+
+
+        /* i nunca existe fuera del for, y en el acumulado debe empezar en 0. */
+
+
+
+    </script>
+</body>
+
+</html>

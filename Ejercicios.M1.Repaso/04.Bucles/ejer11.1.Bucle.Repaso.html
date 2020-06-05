@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 11 Repaso - Bucles</h2>
+    <div id="resultado">Resultado
+    </div>
+
+    <script>
+        let i = 0;
+
+        for (i = 0; i <= 100; i = i + 1) {
+            if (i % 5 !== 0) {
+                console.log(i);
+                document.getElementById("resultado").innerHTML += `<div>${i}</div>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

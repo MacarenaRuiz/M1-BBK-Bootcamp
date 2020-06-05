@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let respuesta;
+        let media;
+        let suma = 0;
+        // suma = respuesta + respuestaAnterior;
+
+        /*
+        suma = 0;
+        
+        let suma;
+        vuelta(i)   respuesta  suma
+        0           23          0 + 23=23    
+        1           42          23 + 42 = 65
+        2           15          65 + 15 = 80
+        3           16          80 + 16 = 96
+        4
+        
+        */
+
+        for (let i = 0; i < 10; i = i + 1) {
+            respuesta = parseInt(window.prompt('Dame un valor'));
+            suma = suma + respuesta;
+        }
+
+        window.alert(suma / 10);
+        window.alert('la media es ' + media);
+
+    </script>
+
+
+</body>
+
+</html>

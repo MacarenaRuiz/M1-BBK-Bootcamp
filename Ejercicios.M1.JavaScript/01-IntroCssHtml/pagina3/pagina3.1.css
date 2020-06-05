@@ -1,0 +1,38 @@
+p {
+    margin: 0;
+}
+.primero {
+    background-color: red;
+    width: 50%;
+    padding: 25px;
+    border: 10px solid black; 
+}
+.segundo {
+    background-color: blue;
+    width: 400px;
+    padding: 25px;
+    border: 10px solid black; 
+}
+.tercero {
+    background-color: green;
+    width: 300px;
+    
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+

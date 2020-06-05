@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ejercicio 3 - APIS</h1>
+    <div>
+
+        <input type="text" placeholder="Escribe el año." id="anyo">
+        <input type="text" placeholder="Escribe el mes" id="mes">
+        <input type="text" placeholder="Escribe el día." id="dia">
+
+        <button onclick="pedirFecha()">Click aquí</button>
+
+    </div>
+    <div>
+        <p id="date"></p>
+        <p id="title"></p>
+        <p id="image"></p>
+        <p id="explanation"></p>
+    </div>
+
+    <script>
+        
+        function pedirFecha() {
+
+            let anyo = document.getElementById("anyo").value;
+            let mes = document.getElementById("mes").value;
+            let dia = document.getElementById("dia").value;
+
+            fetch(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${anyo}-${mes}-${dia}`)  //He modificado la fecha actual por lo siguiente ${anyo}-${mes}-${dia}
+                .then(
+                    function cogerRespuesta(respuesta) {
+                        return respuesta.json();
+
+                    }
+                )
+
+                .then(
+                    function cogerData(datos) {
+
+                        document.getElementById("date").innerHTML = `<div><p>${datos.date}</p></div>`;
+                        document.getElementById("title").innerHTML = `<div><p>${datos.title}</p></div>`;
+                        document.getElementById("image").innerHTML = `<div><img src="${datos.url}"/></div>`;
+                        document.getElementById("explanation").innerHTML = `<div><p>${datos.explanation}</p></div>`;
+
+                    }
+                )
+
+
+        }
+
+
+        /*
+        1- Crea una página con tres cajas de texto en la que se le pida al usuario un año, un mes y un día. Al apretar un botón, se le hace una petición a la API de la NASA de APOD, y muestra la fecha, el título, la imágen y la descripción en la página.
+        Para usar la API de la NASA se necesita una clave de verificación. */
+
+    </script>
+</body>
+
+</html>

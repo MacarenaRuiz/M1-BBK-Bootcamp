@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Personajes de Star Wars por planeta</h1>
+
+    <select id="dropdownPlanetas">
+        <option value="planetasValue">Planetas</option>
+    </select>
+    <button onclick="mostrarPlaneta()">Click</button>
+    <ul id="listadoPersonajes"></ul>
+
+
+
+
+    <script>
+
+        //Desplegable planetas
+
+        dropdownPlanetas();
+        function dropdownPlanetas() {
+            fetch('http://swapi.dev/api/planets/')
+                .then(
+                    function cogerRespuesta(respuesta) {
+                        return respuesta.json();
+                    }
+                )
+
+                .then(
+                    //1.Dropdown Planetas
+                    function cogerData(datos) {
+                        let name = '';
+                        for (let i = 0; i < datos.results.length; i = i + 1) {
+                            console.log(datos.results[i].name);
+                            document.getElementById("dropdownPlanetas").innerHTML += `<option>${datos.results[i].name}</option>`;
+
+                        }
+
+
+                    }
+                );
+        }
+        function mostrarPlaneta() {
+            let desplegado = document.getElementById("dropdownPlanetas").value;
+            //2. window.alert
+            window.alert(desplegado);
+
+
+
+
+
+            //3. Mostar personajes(url) del planeta elegido (window.alert).
+            fetch('http://swapi.dev/api/planets/')
+                .then(
+                    function cogerRespuesta1(respuesta1) {
+                        return respuesta1.json();
+                    }
+                )
+
+                .then(
+
+                    function cogerData1(datos1) {
+                        // let name1 = '';
+
+                        let residentsPersonajes;
+                        //document.getElementById("listaPersonajes").innerHTML = ''; 
+                        for (let i = 0; i < datos1.results.length; i = i + 1) {
+                            //document.getElementById("listadoPersonajes").innerHTML += `<li>${datos1.results[i].residents}</li>`;
+                            // Aquí aparecen todos los residentes de todos los planetas
+
+                            if (datos1.results[i].name === desplegado) {
+                                 for (let j = 0; j < datos1.results[i].residents.length; j = j + 1) {
+                                //   console.log(datos1.results.residents[j]);
+                                 document.getElementById("listadoPersonajes").innerHTML += `<li>${datos1.results[i].residents[j]}</li>`;
+
+                            }
+
+
+                        }
+
+
+
+                    }
+                }
+                )
+
+        }
+
+
+
+
+        /*
+        1- Utilizar la base de datos de Star Wars (disponible en https://swapi.co/documentation), para obtener la lista de planetas y mostrarlos en un dropdown (etiqueta select).
+        2- Cuando el usuario elige una opción, mostrar un alert con el nombre del planeta seleccionado (podéis usar un botón para ello).
+        3- En vez de mostrar el alert, hacer una petición fetch para ver los personajes que están en ese planeta y mostrarlos en un div debajo del dropdown.
+        4- Hacer la petición fetch en cuanto se selecciona una opción diferente, sin utilizar el botón (buscar en internet documentación sobre eventos que se ejecutan cuando se cambia la selección)
+        */
+    </script>
+</body>
+
+</html>

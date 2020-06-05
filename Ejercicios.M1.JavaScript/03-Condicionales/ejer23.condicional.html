@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        
+        let examen1 = parseInt(window.prompt('Dime una nota del 1 al 5'));
+        let examen2 = parseInt(window.prompt('Dime otra nota el 1 al 5'));
+        let examen3 = parseInt(window.prompt('Dime otra nota del 1 al 5'));
+
+
+        if (examen1 > examen2) {
+            console.log(examen1 + ', examen1 ha obtenido la nota más alta');
+        }
+
+        else {
+            console.log(examen2 + ', examen2 ha obtenido la nota más alta');
+        }
+
+        let notaFinal = examen1 + examen3;
+        window.alert('notaFinal es ' + notaFinal);
+
+        switch (notaFinal) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4: window.alert('Suspenso');
+                break;
+            case 5: window.alert('Suficiente');
+                break;
+            case 6: window.alert('Bien');
+                break;
+            case 7: window.alert('Notable');
+                break;
+            case 8: window.alert('Notable');
+                break;
+            case 9: window.alert('Sobresaliente');
+                break;
+            case 10: window.alert('Matricula');
+                break;
+
+        }
+
+
+        /*
+        
+        Operario ternario
+        
+        let examenFinal = parseInt (window.prompt('Qué nota has sacado?'));
+        let calificacion = examenFinal > 5? 'Has aprovado': 'Has suspendido';
+        window.alert (calificacion);
+        
+        
+        let examen1 = parseInt(window.prompt('Dime una nota del 1 al 5'));
+        let examen2 = parseInt(window.prompt('Dime otra nota el 1 al 5'));
+        let examen3 = parseInt(window.prompt('Dime otra nota del 1 al 5'));
+        let calificacion = examen1 > examen2  ? (examen1+examen3): (examen2+examen3);
+        window.alert (calificacion);
+
+        
+
+        let recogerPizza = window.prompt('Vienes a recoger la pizza? "si" ó "no"');
+        let respuesta = recogerPizza ? 'Te preparamos la pizza': 'No podemos llevarte la pizza nosotros';
+        window.alert (respuesta);
+        */
+
+
+    </script>
+</body>
+
+</html>

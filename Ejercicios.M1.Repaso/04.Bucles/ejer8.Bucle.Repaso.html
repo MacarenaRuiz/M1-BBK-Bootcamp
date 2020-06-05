@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - ejercicio 8</title>
+</head>
+
+<body>
+
+    <div>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        // Pedir valores
+        //si se introduce valor negativo: 'Se ignoran valores negativos' -- if else (condición)
+        // si introduce 0, se termina y además se suman todos los valores introducidos
+
+
+        let valor;
+        let acumulable = 0;
+
+        do {
+            valor = parseInt(window.prompt('Dame un valor'));
+
+            if (valor < 0) {
+                window.alert('Se ignoran los valores negativos');
+            }
+
+            else if (valor > 0) {
+                console.log(acumulable = acumulable + valor);
+            }
+
+            //si el valor !== es distinto a cero, no lo cumple y sigue preguntandome
+        } while (valor !== 0);
+        console.log(acumulable)
+        document.getElementById("resultado").innerHTML += `<div><p>El acumulable es = ${acumulable}</p></div>`;
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        window.alert('Elije una de las siguientes opciones (A,B,C):A: ir a la playa, B: ir a la moñtana y C: léete un libro');
+        let opcion = window.prompt('Qué opción elegiste?');
+
+
+        1//. If... else if..
+
+        if (opcion === 'A') {
+            console.log('Has elegido A, ir a la playa')
+        }
+        else if (opcion === 'B') {
+            console.log('Has elegido B, ir a la montaña')
+        }
+        else if (opcion === 'C') {
+            console.log('Has elegido C, léete un libro')
+        }
+        else {
+            console.log('Quédate en casa');
+        }
+    /*
+            2.// Switch
+            switch (opcion) {
+                case 'A': console.log('Has elegido A, ir a la playa');
+                    break;
+                case 'B': console.log('Has elegido B, ir a la montaña');
+                    break;
+                case 'C': console.log('Has elegido C, léete un libro');
+                    break;
+                default: console.log('No has elegido nada');
+                    break;
+            }
+    */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Resultado</h1>
+    <div id="resultado">
+        <p></p>
+    </div>
+
+
+    <script>
+
+
+        let multiplicacion = 1;
+
+
+        for (let inicio = 1; inicio <= 10; inicio = inicio + 1) {
+            multiplicacion = multiplicacion * inicio;
+
+            document.getElementById('resultado').innerHTML += `<div><p>${inicio}-${multiplicacion}</p></div>`;
+           
+            // document.getElementById('resultado').innerHTML = document.getElementById('resultado').innerHTML+  `<div><p>${inicio}-${multiplicacion}</p></div>`;
+
+        }
+
+
+
+
+        /*
+            //WHILE
+        
+                console.log('Antes del bucle');
+                let i = 0;
+                while(i < 3) {
+                    console.log(i);
+                    i = i + 1;
+                }
+                console.log('Después del bucle');
+        }*/
+
+    </script>
+</body>
+
+</html>

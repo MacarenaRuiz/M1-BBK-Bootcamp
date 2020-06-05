@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h3>Lista de factoriales</h3>
+    <div>
+        <ul id="factorial"></ul>
+    </div>
+    <script>
+        //valor del 1 al 10 y su factorial
+        // Declaramos variables
+
+        let i;
+        let factorial = 1;
+
+        for (let i = 1; i <= 10; i++) {
+            factorial = factorial * i;
+
+            console.log(factorial);
+            document.getElementById("factorial").innerHTML += `<div><ul><li>el factorial de ${i} es = ${factorial}</li></ul></div>`;
+        }
+
+
+
+        /*Console.log va dentro del for para que imprima el resultado de las 10 vueltas.*/
+
+
+        /*
+vuelta       factorial     resultado
+1           1                1
+2           1*2              2
+3           1*2*3            6
+4           1*2*3*4          36
+5           1*2*3*4*5        120
+*/
+    </script>
+</body>
+
+</html>

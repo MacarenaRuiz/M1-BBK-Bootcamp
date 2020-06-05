@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        let persona = { nombre: "tintin", edad: 18 }
+
+    
+        console.log(persona.nombre);
+        console.log(persona.edad);
+        console.log(persona.nombre.edad);
+
+        persona.edad = 19;   //Modificamos la edad de persona
+        console.log(persona.edad);
+
+        persona.nombre = 'Mateo';  //Modificamos el nombre de persona
+        console.log(persona.nombre);
+
+        persona.mascota = 'perro';  //Añadimos otro elemento, en este caso mascota
+        console.log(persona);
+
+        //let persona = {nombre: "Mateo", edad: 18, mascota: "perro"}
+
+
+
+        persona = persona.profesion = "periodista";  //añadir un elemento (profesión) en let persona
+        console.log(persona.profesion);
+
+
+        delete persona.profesion;  //Para eliminar elemento (profesion) en let persona.
+        console.log(persona);
+
+        let mascota = {
+            nombre: 'milu',
+            animal: 'perro'
+        }
+        console.log(mascota);
+        console.log(mascota.nombre);
+
+        console.lg(persona.mascota.animal);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

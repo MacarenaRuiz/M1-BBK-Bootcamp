@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transciones</title>
+    <link rel="stylesheet" href="Transciones.css">
+</head>
+
+<body>
+
+    <p>Hola</p>
+    <!--  Cambiamos alt por id-->
+    <img src="signs.svg" alt="" id="estrella">
+
+    <button onclick="rotandoFunc()">Click</button>;
+
+
+    <script>
+        function rotandoFunc() {
+            document.getElementById("estrella").classList.toggle("rotando")
+        }
+
+        //estrella --> id
+        //rotando --> clase
+    </script>
+
+
+
+</body>
+
+</html>

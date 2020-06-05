@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-Carpintería</title>
+    <link rel="stylesheet" href="Carpintería.ejercicio.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.svg" alt="logo-carpintería">
+        <h1>Carpintería Mazarredo</h1>
+    </header>
+
+    <main>
+        <div>
+            <h1 class="titulo-herramientas">Herramientas</h1>
+            <div class="herramientas">
+            </div>
+        </div>
+
+        <div class="box-herramientas">
+            <div class="brocha">
+                <p>Brocha</p>
+                <img src="brocha.svg" alt="Brocha">
+                <p>2€</p>
+                <p>
+                    <button onclick="addBrocha()">Añadir</button>
+                    <button onclick="quitarBrocha()">Quitar</button>
+                </p>
+            </div>
+
+            <div class="llave">
+                <p>Llave</p>
+                <img src="llave.svg" alt="Llave">
+                <p>3€</p>
+                <p>
+                    <button onclick="addLlave()">Añadir</button>
+                    <button onclick="quitarLlave()">Quitar</button>
+                </p>
+            </div>
+
+            <div class="martillo">
+                <p>Martillo</p>
+                <img src="martillo.svg" alt="Martillo">
+                <p>4€</p>
+                <p>
+                    <button onclick="addMartillo()">Añadir</button>
+                    <button onclick="quitarMartillo()">Quitar</button>
+                </p>
+            </div>
+
+            <div class="tronco">
+                <p>Tronco</p>
+                <img src="tronco.svg" alt="Tronco">
+                <p>3€</p>
+                <p>
+                    <button onclick="addTronco()">Añadir</button>
+                    <button onclick="quitarTronco()">Quitar</button>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h2 id="cestaHerramientas">Cesta</h2>
+
+        <div id="cestaBrochaBox">
+            <p id="cestaBrocha">Brocha</p>
+            <p id="cestaBrochaImagen"></p>
+            <p id="precioTotalBrocha"></p>
+        </div>
+
+        <div id="cestaLlaveBox">
+            <p id="cestaLlave">Llave</p>
+            <p id="cestaLlaveImagen"></p>
+        </div>
+        <div id="cestaMartilloBox">
+            <p id="cestaMartillo">Martillo</p>
+            <p id="cestaMartilloImagen"></p>
+        </div>
+        <div id="cestaTroncoBox">
+            <p id="cestaTronco">Tronco</p>
+            <p id="cestaTroncoImagen"></p>
+        </div>
+
+        <div>
+            <h4 id="precioTotalHerramientas">Precio Total Herramientas</h4>
+            <p id="precioTotal">Precio Total:</p>
+        </div>
+    </footer>
+
+    <script>
+
+
+        //BROCHA
+        let sumarBrocha = 0;  //ES IMPORTANTE que esta variable esté fuera de la función para que esta linea de codigo no se repita cada vez q le doy al botón "añadir".
+
+        function addBrocha() {
+            sumarBrocha = sumarBrocha + 1;
+            if (sumarBrocha === 0 || sumarBrocha < 0) {
+                document.getElementById("cestaBrocha").innerHTML = `<p>Brocha:</p>`;
+                document.getElementById("cestaBrochaImagen").innerHTML += "";
+            }
+            else if (sumarBrocha > 0) {
+                document.getElementById("cestaBrocha").innerHTML = `<p>Brocha${sumarBrocha}</p>`;
+                document.getElementById("cestaBrochaImagen").innerHTML += `<img src="brocha.svg" alt="Brocha">`;
+            }
+            mostrarPrecioTotal();
+        }
+        function quitarBrocha() {
+            //1r Queremos borrar las imagenes de cestaBrochaImagen
+            //2. SumarBrocha - (sumarBrocha -1), conclusión: restar valor numérico
+            //3. Añadir las imagenes dependiendo del valor numérico
+
+            //1r Queremos borrar las imagenes de cestaBrochaImagen
+            document.getElementById("cestaBrochaImagen").innerHTML = "";
+
+            //2. SumarBrocha - (sumarBrocha -1), conclusión: restar valor numérico
+            //restarBrocha --> sumarBrocha - 1;
+            sumarBrocha = sumarBrocha - 1;
+            document.getElementById("cestaBrocha").innerHTML = `<p>Brocha${sumarBrocha}</p>`;
+
+            if (sumarBrocha === 0 || sumarBrocha < 0) {
+                document.getElementById("cestaBrocha").innerHTML = `<p>Brocha:0</p>`;
+                document.getElementById("cestaBrochaImagen").innerHTML += "";
+            }
+
+            //3. Añadir las imagenes dependiendo del valor numérico
+            else if (sumarBrocha > 0) {
+                for (i = 0; i < sumarBrocha; i = i + 1) {
+                    document.getElementById("cestaBrochaImagen").innerHTML += `<img src="brocha.svg" alt="Brocha">`;
+                }
+            }
+            mostrarPrecioTotal();
+        }
+        //LLAVE
+        let sumarLlave = 0;
+
+        function addLlave() {
+            sumarLlave = sumarLlave + 1;
+            if (sumarLlave === 0 || sumarLlave < 0) {
+                document.getElementById("cestaLlave").innerHTML = `<p>Llave:</p>`;
+                document.getElementById("cestaLlaveImagen").innerHTML += "";
+            }
+            else if (sumarLlave > 0) {
+                document.getElementById("cestaLlave").innerHTML = `<p>Llave${sumarLlave}</p>`;
+                document.getElementById("cestaLlaveImagen").innerHTML += `<img src="llave.svg" alt="Llave">`;
+            }
+            mostrarPrecioTotal();
+        }
+        function quitarLlave() {
+            document.getElementById("cestaLlaveImagen").innerHTML = "";
+            sumarLlave = sumarLlave - 1;
+            document.getElementById("cestaLlave").innerHTML = `<p>Llave${sumarLlave}</p>`;
+
+            if (sumarLlave === 0 || sumarLlave < 0) {
+                document.getElementById("cestaLlave").innerHTML = `<p>Llave:0</p>`;
+                document.getElementById("cestaLlaveImagen").innerHTML += "";
+            }
+
+            else if (sumarLlave > 0) {
+                for (i = 0; i < sumarLlave; i = i + 1) {
+                    document.getElementById("cestaLlaveImagen").innerHTML += `<img src="llave.svg" alt="Llave">`;
+                }
+            }
+            mostrarPrecioTotal();
+        }
+
+
+        //MARTILLO
+        let sumarMartillo = 0;
+
+        function addMartillo() {
+            sumarMartillo = sumarMartillo + 1;
+            if (sumarMartillo === 0 || sumarMartillo < 0) {
+                document.getElementById("cestaMartillo").innerHTML = `<p>Martillo:</p>`;
+                document.getElementById("cestaMartilloImagen").innerHTML += "";
+            }
+            else if (sumarMartillo > 0) {
+                document.getElementById("cestaMartillo").innerHTML = `<p>Martillo${sumarMartillo}</p>`;
+                document.getElementById("cestaMartilloImagen").innerHTML += `<img src="martillo.svg" alt="Martillo">`;
+            }
+            mostrarPrecioTotal();
+        }
+        function quitarMartillo() {
+            document.getElementById("cestaMartilloImagen").innerHTML = "";
+            sumarMartillo = sumarMartillo - 1;
+            document.getElementById("cestaMartillo").innerHTML = `<p>Martillo${sumarMartillo}</p>`;
+
+            if (sumarMartillo === 0 || sumarMartillo < 0) {
+                document.getElementById("cestaMartillo").innerHTML = `<p>Martillo:0</p>`;
+                document.getElementById("cestaMartilloImagen").innerHTML += "";
+            }
+
+            else if (sumarMartillo > 0) {
+                for (i = 0; i < sumarMartillo; i = i + 1) {
+                    document.getElementById("cestaMartilloImagen").innerHTML += `<img src="martillo.svg" alt="Martillo">`;
+                }
+            }
+            mostrarPrecioTotal();
+        }
+
+
+        //TRONCO
+        let sumarTronco = 0;
+
+        function addTronco() {
+            sumarTronco = sumarTronco + 1;
+            if (sumarTronco === 0 || sumarTronco < 0) {
+                document.getElementById("cestaTronco").innerHTML = `<p>Tronco:</p>`;
+                document.getElementById("cestaTroncoImagen").innerHTML += "";
+            }
+            else if (sumarTronco > 0) {
+                document.getElementById("cestaTronco").innerHTML = `<p>Martillo${sumarTronco}</p>`;
+                document.getElementById("cestaTroncoImagen").innerHTML += `<img src="tronco.svg" alt="Tronco">`;
+            }
+            mostrarPrecioTotal();
+        }
+        function quitarTronco() {
+            document.getElementById("cestaTroncoImagen").innerHTML = "";
+            sumarTronco = sumarTronco - 1;
+            document.getElementById("cestaTronco").innerHTML = `<p>Tronco${sumarTronco}</p>`;
+
+            if (sumarTronco === 0 || sumarTronco < 0) {
+                document.getElementById("cestaTronco").innerHTML = `<p>Tronco:0</p>`;
+                document.getElementById("cestaTroncoImagen").innerHTML += "";
+            }
+
+            else if (sumarTronco > 0) {
+                for (i = 0; i < sumarTronco; i = i + 1) {
+                    document.getElementById("cestaTroncoImagen").innerHTML += `<img src="tronco.svg" alt="Tronco">`;
+                }
+            }
+            mostrarPrecioTotal();
+        }
+
+        // precioTotal queremos calcularlo tanto al cargar la página (un 0) cómo cuando añàdimos o quitamos cualquier producto
+        function mostrarPrecioTotal() {
+            let precioTotal = (sumarBrocha * 2) + (sumarLlave * 3) + (sumarMartillo * 4) + (sumarTronco * 3);
+
+            if (precioTotal === 0 || precioTotal < 0) {
+                precioTotal = 0;
+                // si precioTotal es igual a 0 o inferior a 0, mostrar --> precioTotal = 0;
+
+            }
+            document.getElementById("precioTotal").innerHTML = `<div>${precioTotal}€</div>`;
+            console.log(precioTotal);
+        }
+        mostrarPrecioTotal();
+    </script>
+
+
+
+
+
+</body>
+
+</html>

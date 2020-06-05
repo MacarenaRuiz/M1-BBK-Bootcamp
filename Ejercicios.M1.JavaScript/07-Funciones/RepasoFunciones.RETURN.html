@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        let resultadoSuma = sumar();
+
+        let numero = window.prompt("Escribe un número");
+        let parImpar = esPar(numero);
+        mostrarParImpar(parImpar);
+
+
+        function mostrarParImpar(valor) {
+            if (valor === true) {
+                console.log("El número introducido es par");
+            } else {
+                console.log("El número introducido es impar");
+            };
+        }
+
+        function esPar(numero) {
+            if (numero % 2 === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+
+        function sumar() {
+            console.log("Has elegido sumar");
+            let resultado = 2 + 2;
+            return resultado;
+        }
+    </script>
+
+</body>
+
+</html>

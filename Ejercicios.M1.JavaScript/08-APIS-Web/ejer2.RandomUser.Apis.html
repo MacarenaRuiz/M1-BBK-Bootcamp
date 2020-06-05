@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="aleatorio">
+
+        <p id="firstName"><strong>First Name:</strong></p>
+        <p id="secondName"><Strong>Second Name:</Strong></p>
+        <p id="email"><strong>E-mail:</strong></p>
+        <p id="location"><strong>Location:</strong></p>
+        <p id="picture"><strong>Picture:</strong></p>
+
+        <button onclick="botón()">Click here</button>
+
+
+    </div>
+
+    <script>
+        function botón() {
+
+
+            fetch('https://randomuser.me/api/')
+
+                //Url
+                .then(
+                    function cogerRespuesta(respuesta) {
+                        return respuesta.json();
+
+                    }
+                )
+
+                //Info que queremos obtener
+                .then(
+                    function cogerDatos(datos) {
+
+                        let nameFirst = '';
+                        let nameSecond = '';
+                        let email = '';
+                        let location = '';
+                        let picture = '';
+
+                        for (i = 0; i < datos.results.length; i = i + 1) {
+
+                            console.log(datos.results[i].name.first);
+                            console.log(datos.results[i].name.last);
+                            console.log(datos.results[i].email);
+                            console.log(datos.results[i].location.street.name);
+                            console.log(datos.results[i].picture);
+
+                            document.getElementById("firstName").innerHTML = `<div><p>${datos.results[i].name.first}</p></div>`;
+                            document.getElementById("secondName").innerHTML = `<div><p>${datos.results[i].name.last}</p></div>`;
+                            document.getElementById("email").innerHTML = `<div><p>${datos.results[i].email}</p></div>`;
+                            document.getElementById("location").innerHTML = `<div><p>${datos.results[i].location.street.number}</p></div>`;
+                            document.getElementById("location").innerHTML = `<div><p>${datos.results[i].location.street.name}</p></div>`;
+                            document.getElementById("location").innerHTML = `<div><p>${datos.results[i].location.city}</p></div>`;
+                            document.getElementById("picture").innerHTML = `<div><img src="${datos.results[i].picture.medium}"/></div>`;
+
+                            //document.getElementById("aleatorio").innerHTML += `<div><p>${datos.results[i].name.first} ${datos.results[i].name.first} ${datos.results[i].email}${datos.results[i].location.street.number}${datos.results[i].location.street.name}${datos.results[i].location.city}</p></div>`;
+                            //document.getElementById("picture").innerHTML += `<div><img src="${datos.results[i].picture.medium}"/></div>`;
+                        }
+
+
+                    }
+                )
+
+        }
+
+        /* Random User
+1- Usa la api https://randomuser.me/ para generar un usuario aleatorio. Crea un div en el que aparezca la foto, el nombre, el email, la dirección (street name, street number, city, state, country, postcode) */
+
+    </script>
+</body>
+
+</html>

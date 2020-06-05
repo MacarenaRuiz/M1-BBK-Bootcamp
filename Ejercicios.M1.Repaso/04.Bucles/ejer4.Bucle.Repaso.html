@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ejercicio 4 - Do-While</h1>
+    <div id="Resultado">
+
+    </div>
+    <script>
+        let valor = 0;
+        let acumulable = 0;
+        let i = 1;
+        do {
+            valor = parseInt(window.prompt('Dame un valor'));
+            i++;
+            acumulable = acumulable + valor;
+        }
+        while (i <= 10)
+
+        console.log(acumulable / 10);
+
+        document.getElementById('Resultado').innerHTML += `<div>La media es ${acumulable / 10}</div>`;
+
+
+        /* Declaramos las variables (valor y acumulable) y declaramos i (número de vueltas).
+        
+        Do----> Ejecutamos la acción, en este caso, preguntamos valor al usuario.
+        y sumamos el número de vueltas.
+        Además acumulamos los 10 valores dados por el usuario como  pide el problema.
+        
+        while----> Comprobamos que el número de vueltas cumple la condición (i<=10).
+        
+        
+        do > Ejecuta la acción
+        while > Comprueba
+        console.log
+        */
+    </script>
+
+</body>
+
+</html>

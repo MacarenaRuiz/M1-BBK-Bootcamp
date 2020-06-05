@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .estilo {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicio 10</h1>
+    <div class="estilo">
+        <div id="ejercicio"></div>
+        <div id="resultado1"></div>
+        <div id="resultado2"></div>
+    </div>
+    </div>
+    <script>
+        /* Numeros impares, mostrar el cuadrado y en la lista de los numeros pares, mostrar el cubo   */
+        let numero;
+        let resultado;
+        let cubo;
+
+
+        for (let i = 0; i <= 12; i = i + 1) {
+            console.log(i);
+            document.getElementById('ejercicio').innerHTML += `<div>${i}<div>`;
+
+            //pares 
+            if (i % 2 === 0) {
+
+                console.log(i ** 3);
+                document.getElementById('resultado1').innerHTML += `<div>${i ** 3}<div>`;
+            }
+
+            // impares
+            else if (i) {
+                console.log(i ** 2);
+                document.getElementById('resultado2').innerHTML += `<div>${i ** 2}<div>`;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

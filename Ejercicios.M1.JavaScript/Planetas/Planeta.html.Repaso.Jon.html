@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #planetas {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #planetas div {
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+        }
+
+        img {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- creamos 3 input, en los que recogeremos los planetas introducidos por el usuario  -->
+    <input type="text" id="planeta1" placeholder="Escribe un planeta" />
+    <input type="text" id="planeta2" placeholder="Escribe un planeta" />
+    <input type="text" id="planeta3" placeholder="Escribe un planeta" />
+
+    <!-- creamos un botón. indicamos que, al hacer click, ejecutaremos la función llamada mostrarPlanetas() -->
+    <button onclick="mostrarPlanetas()">Click</button>
+
+    <div id="div-mensaje"> </div>
+
+    <div id="planetas">
+
+    </div>
+
+
+    <script>
+        let sistemaSolar = [
+            {
+                nombre: 'mercurio',
+                color: 'gris',
+                fondo: 'grey',
+                temperatura: 350,
+                imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/1024px-Mercury_in_color_-_Prockter07_centered.jpg'
+
+            },
+            {
+                nombre: 'venus',
+                color: 'blanco',
+                fondo: 'white',
+                temperatura: 460,
+                imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/220px-Venus-real_color.jpg'
+
+            },
+            {
+                nombre: 'tierra',
+                color: 'morado',
+                fondo: 'purple',
+                temperatura: 14,
+                imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg'
+            },
+            {
+                nombre: 'marte',
+                color: 'rojo',
+                fondo: 'red',
+                temperatura: -46,
+                imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg'
+            },
+            {
+                nombre: 'jupiter',
+                color: 'marrón',
+                fondo: 'brown',
+                temperatura: -121,
+                imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/280px-Jupiter_by_Cassini-Huygens.jpg'
+            },
+            {
+                nombre: 'saturno',
+                color: 'amarillo',
+                fondo: 'yellow',
+                temperatura: -130,
+                imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg'
+            },
+            {
+                nombre: 'urano',
+                color: 'azul',
+                fondo: 'blue',
+                temperatura: -205,
+                imagen: 'http://www.manzanares.es/v2/sites/paseo/img/urano/urano1.jpg'
+            },
+            {
+                nombre: 'neptuno',
+                color: 'azul',
+                fondo: 'blue',
+                temperatura: -220,
+                imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/280px-Neptune_Full.jpg'
+            },
+            {
+                nombre: 'plutón',
+                color: 'blanco',
+                fondo: 'white',
+                temperatura: -229,
+                imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg'
+            }
+
+        ];
+
+
+        // definimos la función mostrarPlanetas
+        function mostrarPlanetas() {
+
+            //guardamos en 3 variables los nombres de los planetas introducidos por el usuario 
+            let planeta1 = document.getElementById("planeta1").value;
+            let planeta2 = document.getElementById("planeta2").value;
+            let planeta3 = document.getElementById("planeta3").value;
+
+            //creamos 3 variables booleanas que usaremos para ver si los valores introducidos son válidos (si existen en el sistema solar)
+            let planeta1Correcto = false;
+            let planeta2Correcto = false;
+            let planeta3Correcto = false;
+
+
+
+            // creamos un string vacío. en esta variable guardaremos la cadena de texto que introduciremos en el HTML
+            let planetasHTML = '';
+
+            //miramos si hay planetas repetidos.
+            if (planeta1 === planeta2 || planeta1 === planeta3 || planeta2 === planeta3) {
+                //si hay algún planeta repetido, mostramos este mensaje en el HTML
+                planetasHTML = "Hay planetas repetidos. Introduce tres planetas diferentes"
+                document.getElementById("planetas").innerHTML = planetasHTML;
+
+            } else {
+                //asignamos un string vacío a la variable planetasHTML. hacemos esto para que, cada vez que se hace click en el botón y los 3 planetas son correctos, aparezcan únicamente 3 planetas y no se vayan acumulando.
+
+                planetasHTML = '';
+                //recorremos el array de sistema solar para comparar cada valor introducido por el usuario con los nombres de cada objeto del sistema solar
+                for (let i = 0; i < sistemaSolar.length; i++) {
+                    //si el primer planeta es correcto, añadimos a la cadena planetasHTML el código que queremos pintar en nuestra página. además, ponemos la variable planeta1Correcto a true. se podría hacer igualmente con un switch (más abajo)
+                    if (sistemaSolar[i].nombre === planeta1) {
+                        //en el botón definimos una función cambiarColor() para cuando hacemos click en él. le pasamos dos parámetros: el nombre del planeta y el color de fondo
+                        planetasHTML += `<div id="${sistemaSolar[i].nombre}">
+                                                <h3>${sistemaSolar[i].nombre}</h3>
+                                                <img src="${sistemaSolar[i].imagen}"/>
+                                                <p class="color-planeta"> ${sistemaSolar[i].color}</p>
+                                                <p> ${sistemaSolar[i].temperatura}</p>
+                                                <button onclick="cambiarColor('${sistemaSolar[i].nombre}','${sistemaSolar[i].fondo}')">Cambiar color</button>
+                                            </div>`;
+                        planeta1Correcto = true;
+                        //hacemos lo mismo que hemos hecho en el caso anterior. añadimos a la cadena de texto y cambiamos el valor de la variable planeta2Correcto a true
+                    } if (sistemaSolar[i].nombre === planeta2) {
+                        planetasHTML += `<div id="${sistemaSolar[i].nombre}">
+                                                <h3>${sistemaSolar[i].nombre}</h3>
+                                                <img src="${sistemaSolar[i].imagen}"/>
+                                                <p class="color-planeta"> ${sistemaSolar[i].color}</p>
+                                                <p> ${sistemaSolar[i].temperatura}</p>
+                                                <button onclick="cambiarColor('${sistemaSolar[i].nombre}','${sistemaSolar[i].fondo}')">Cambiar color</button>
+                                            </div>`;
+                        planeta2Correcto = true;
+
+                    } if (sistemaSolar[i].nombre === planeta3) {
+                        planetasHTML += `<div id="${sistemaSolar[i].nombre}">
+                                                <h3>${sistemaSolar[i].nombre}</h3>
+                                                <img src="${sistemaSolar[i].imagen}"/>
+                                                <p class="color-planeta"> ${sistemaSolar[i].color}</p>
+                                                <p> ${sistemaSolar[i].temperatura}</p>
+                                                <button onclick="cambiarColor('${sistemaSolar[i].nombre}','${sistemaSolar[i].fondo}')">Cambiar color</button>
+                                            </div>`;
+                        planeta3Correcto = true;
+                    }
+
+
+
+                    /************************************************************
+                                                SWITCH
+                    ************************************************************/
+                    /************************************************************
+                     switch(sistemaSolar[i].nombre){
+                         case planeta1: planetasHTML += `<div id="${sistemaSolar[i].nombre}">
+                                                 <h3>${sistemaSolar[i].nombre}</h3>
+                                                 <img src="${sistemaSolar[i].imagen}"/>
+                                                 <p class="color-planeta"> ${sistemaSolar[i].color}</p>
+                                                 <p> ${sistemaSolar[i].temperatura}</p>
+                                                 <button onclick="cambiarColor('${sistemaSolar[i].nombre}','${sistemaSolar[i].fondo}')">Cambiar color</button>
+                                             </div>`;
+                                        planeta1Correcto = true;
+                                        break;
+                         case planeta2: planetasHTML += `<div id="${sistemaSolar[i].nombre}">
+                                                 <h3>${sistemaSolar[i].nombre}</h3>
+                                                 <img src="${sistemaSolar[i].imagen}"/>
+                                                 <p class="color-planeta"> ${sistemaSolar[i].color}</p>
+                                                 <p> ${sistemaSolar[i].temperatura}</p>
+                                                 <button onclick="cambiarColor('${sistemaSolar[i].nombre}','${sistemaSolar[i].fondo}')">Cambiar color</button>
+                                             </div>`;
+                                        planeta2Correcto = true;
+                                        break;
+                        case planeta3: planetasHTML += `<div id="${sistemaSolar[i].nombre}">
+                                                 <h3>${sistemaSolar[i].nombre}</h3>
+                                                 <img src="${sistemaSolar[i].imagen}"/>
+                                                 <p class="color-planeta"> ${sistemaSolar[i].color}</p>
+                                                 <p> ${sistemaSolar[i].temperatura}</p>
+                                                 <button onclick="cambiarColor('${sistemaSolar[i].nombre}','${sistemaSolar[i].fondo}')">Cambiar color</button>
+                                             </div>`;
+                                        planeta3Correcto = true;
+                                        break;
+                         
+                     }
+ 
+                     ************************************************************/
+                }
+            }
+
+            //una vez fuera del bucle, comprobamos los valores de las 3 variables booleanas. si hay alguna en falso quiere decir que hay algún valor introducido por el usuario que no es válido. por tanto, mostramos el siguiente mensaje
+            if (planeta1Correcto === false || planeta2Correcto === false || planeta3Correcto === false) {
+                planetasHTML = '<h3>Los nombres de los planetas no son correctos. Introduce un valor válido</h3>';
+                document.getElementById("planetas").innerHTML = planetasHTML;
+            } else {
+                //si están todas la variables a true, pintamos los planetas en el HTML
+                document.getElementById("planetas").innerHTML = planetasHTML;
+            }
+        }
+
+
+
+        //definimos la función cambiarColor. le pasamos dos parámetros: el nombre del planeta y un color
+        function cambiarColor(nombrePlaneta, color) {
+            //al hacer click en el botón, cambiaremos el color de fondo del div con el id igual al nombre del planeta que recibimos por parámetro. el color de fondo será el color que recibimos por parámetro
+            document.getElementById(nombrePlaneta).style.backgroundColor = color;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

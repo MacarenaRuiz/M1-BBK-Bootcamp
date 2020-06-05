@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        p {
+            width: 33%;
+            padding: 20px;
+        }
+
+        @media (max-width: 500px) {
+            div {
+                display: block;
+            }
+            p {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Primer párrafo Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsam delectus temporibus beatae voluptatibus quis itaque sunt autem asperiores aliquam vel!</p>
+        <p>Segundo párrafo Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos, quisquam, nesciunt sed eaque illo nulla quasi iure eveniet architecto tenetur magnam! Laboriosam autem repellat inventore corrupti debitis perspiciatis labore!</p>
+        <p>Tercer párrafo Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, id quos magnam ratione ducimus ut dolorum dolorem eaque atque et.</p>
+    </div>
+</body>
+</html>

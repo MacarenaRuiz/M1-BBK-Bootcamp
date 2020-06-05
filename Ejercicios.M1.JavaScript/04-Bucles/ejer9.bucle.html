@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let valor;
+        let par = 0;
+        let impar = 0;
+
+
+        do {
+            valor = window.prompt('Introduce valor "P" o valor "I"');
+
+            if (valor === 'P') {
+                for (let i = 0; i <= 100; i = i + 2) {
+                    console.log(i);
+                }
+            }
+
+
+            else if (valor === 'I') {
+                for (let i = 1; i <= 99; i = i + 2) {
+                    console.log(i);
+                }
+            }
+        }
+
+        while (valor !== 'P' && valor !== 'I')
+
+
+
+    </script>
+</body>
+
+</html>

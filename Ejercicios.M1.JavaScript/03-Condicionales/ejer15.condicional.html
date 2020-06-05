@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //  Con substring estamos extrayendo una parte de un string, (NO parseInt).
+
+        let numero = (window.prompt('dame un número entre 25 y 75'));
+        let numero1 = (window.prompt('dame un número entre 25 y 75'));
+
+        console.log('numero es ' + numero);
+        console.log('numero1 es ' + numero1);
+
+
+
+        /* Esto se puede eliminar.
+        console.log(numero.substring(0, 1) + ' es el primer dígito del número');
+         console.log(numero1.substring(0, 1) + ' es el primer dígito del número1'); */
+
+
+
+
+        // let numero
+        let numeroA = numero.substring(1);
+        console.log(numeroA + ' es el segundo dígito del número');
+
+        let numeroB = numero.substring(0, 1);
+        console.log(numeroB + ' es el primer dígito del número');
+
+        // let numero1
+        let numeroC = numero1.substring(1);
+        console.log(numeroC + ' es el segundo dígito del número1');
+
+        let numeroD = numero1.substring(0, 1);
+        console.log(numeroD + ' es el primer dígito del número1');
+
+        if (numeroA === numeroC) {
+            console.log('El segundo digito del numero coincide con el segundo digito del numero1');
+        } else if (numeroB === numeroD) {
+            console.log('El primer digito del numero coincide con el primer digito del numero1');
+        }
+        else {
+            console.log('no coincide con ningun digito');
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

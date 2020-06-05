@@ -1,0 +1,100 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(64, 179, 64);
+    border-radius: 15px;
+    color: white;
+    font-size: 25px;
+
+}
+header img{
+    width: 80px;
+    padding-right: 15px;
+
+}
+
+.titulo-herramientas {
+display: flex;
+flex-direction: row;
+justify-content: center;
+
+}
+
+.herramientas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box-herramientas{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}
+
+.brocha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    padding: 20px;
+  
+}
+
+.brocha img{
+    width: 60px;
+}
+
+#cestaBrochaBox img{
+    width: 50px;
+}
+
+
+.llave {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.llave img{
+    width: 60px;
+}
+
+#cestaLlaveBox img{
+    width: 50px;
+}
+
+
+
+.martillo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.martillo img{
+    width: 60px;
+}
+
+#cestaMartilloBox img{
+    width: 50px;
+}
+
+.tronco {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    padding: 20px;
+}
+.tronco img {
+    width: 60px; 
+}
+
+

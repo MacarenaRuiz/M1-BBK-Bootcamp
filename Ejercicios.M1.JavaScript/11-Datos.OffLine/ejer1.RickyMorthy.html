@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricky Morty</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 500px) {
+
+
+            #caja-general {
+                display: flex;
+                flex-direction: row;
+                padding-bottom: 10px;
+                position: relative;
+                border-bottom: 2px solid gray;
+            }
+
+            img {
+
+                width: 50%;
+                padding: 10px;
+            }
+
+            .texto {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+        }
+
+        @media (min-width: 500px) {
+
+
+            #personajes {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            #caja-general {
+                margin-bottom: 30px;
+                position: relative;
+                height: 300px;
+                width: 300px;
+                overflow: hidden;
+                border-radius: 50%;
+                margin: 50px;
+
+            }
+
+            img {
+                width: 100%;
+                padding: 0px;
+
+            }
+
+            .texto {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                right: 0;
+                background-color: gray;
+                color: white;
+                text-align: center;
+                background-color: rgb(0, 0, 0, 0.4);
+                font-size: 10px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="personajes"></p>
+        <ul id="listaNombres"></ul>
+
+    </div>
+
+    <!--
+
+    <div>
+        <p id="personajes">
+            <div id="caja-general">
+                <img src=>
+                <div>
+                    <h1>datos.results[i].name</h1>
+                    <button onclick="guardarLista()">
+                    <h3>datos.results[i].status</h3>
+                </div>
+            </div>
+        </p>
+    </div>
+-->
+    <script>
+
+        fetch('https://rickandmortyapi.com/api/character/')
+
+            //Url
+            .then(
+                function cogerRespuesta(respuesta) {
+                    return respuesta.json();
+                }
+            )
+            //Info que queremos obtener
+            .then(
+                function cogerData(datos) {
+                    let personaje = '';
+                    let image = '';
+
+                    for (let i = 0; i < datos.results.length; i = i + 1) {
+                        //console.log(datos.results[i].name);
+                        //console.log(datos.results[i].image);
+                        /*Juego con las posiciones del texto e imagen. En este caso he puesto primero imagen y luego textos.*/
+
+                        document.getElementById("personajes").innerHTML += `<div id="caja-general"><img src="${datos.results[i].image}"/>
+                            <div class="texto"><h1>${datos.results[i].name}</h1>
+
+                            <button onclick="guardarLista('${datos.results[i].name}')">Guardar Lista</button>
+
+                            <h3>${datos.results[i].status}</h3> </div>`;
+                    }
+                }
+
+            )
+
+        let listaNombres = [];
+        listaNombres = JSON.parse(localStorage.getItem('listaNombres')); //Esto recuperando los datos de localStorage (JSON.parse)
+
+
+
+        //En caso que quiera eliminar la lista de nombres guardados en localStorage, y quiera empezar de cero a guardar los nombres en el array (listaNombres = [];), hay que hacer una condicional para que el programa no me diga null, sino que empiece a contar el array de nombres desde un array vacío (listaNombres = []);
+        if (listaNombres === null) {
+            listaNombres = [];
+        }
+
+
+        function guardarLista(nombres) {
+            listaNombres.push(nombres);
+
+            document.getElementById("listaNombres").innerHTML = '';  //Para que no se
+            for (let i = 0; i < listaNombres.length; i++) {
+                document.getElementById("listaNombres").innerHTML += `<li>${listaNombres[i]}</li>`;
+            }
+
+            //Guardando listaNombres (JSON.stringify). //ESto es necesario para que se guarde los nombres en la lista en localStorage una vez la pagina se haya actualizado.
+            let listaNombresEnJson = JSON.stringify(listaNombres);
+            localStorage.setItem('listaNombres', listaNombresEnJson);
+        }
+
+    </script>
+</body>
+
+</html>

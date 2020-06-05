@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Ejercicio 12 Repaso Bucles</h2>
+    <div id="resultado">resultado</div>
+
+    <script>
+        'use of strict'
+        //Escribe un programa que muestre el número entero positivo que el usuario introduzca pero al revés (si introduce 1478 que muestre 8741), hasta que el usuario introduzca 0. 
+        //Si introduce 0 la primera vez, debería mostrarlo al revés (es decir, mostrar 0) y acabar el programa.
+
+
+
+        let numero;
+        do {
+            numero = window.prompt('Dime un numero');
+            for (i = numero.length; 0 < i; i = i - 1) {
+                console.log(numero.substring(i, i - 1));
+            }
+        } while (numero !== '0');
+        console.log(0);
+
+//Se declara fuera y se asigna dentro del do.
+
+
+
+    </script>
+</body>
+
+</html>

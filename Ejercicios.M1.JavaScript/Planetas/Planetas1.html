@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Planetas1.css">
+
+</head>
+
+<body>
+    <header>
+
+        <h1>Planetas - Sistema Solar</h1>
+    </header>
+
+    <main>
+        <h2 id="planetasSeleccionados">Introduce tres planetas</h2>
+
+
+        <!-- Input no se puede meter una función.Se mete el onclick-->
+        <input type="text" placeholder="Primer Planeta" id="planeta1">
+        <input type="text" placeholder="Segundo Planeta" id="planeta2">
+        <input type="text" placeholder="Tercer Planeta" id="planeta3">
+
+        <button onclick="clickPlaneta()">Click</button>
+
+        <div id="planetas">
+
+           
+                <div id="planeta1.id">
+                    <p></p>
+                    <p id="imagen.planeta1"></p>
+                    <p id="color.planeta1"></p>
+                    <!-- <button onclick="cambiarColor1()">cambiarColor1</ -->
+                    <p id="temperatura.planeta1"></p>
+                </div>
+
+                <div id="planeta2.id">
+                    <p></p>
+                    <p id="imagen.planeta2"></p>
+                    <p id="color.planeta2"></p>
+                    <p id="temperatura.planeta2"></p>
+                </div>
+
+                <div id="planeta3.id">
+                    <p></p>
+                    <p id="imagen.planeta3"></p>
+                    <p id="color.planeta3"></p>
+                    <p id="temperatura.planeta3"></p>
+                </div>
+            
+        </div>
+
+        <script>
+
+            'use strict'
+            /*	Pedir al usuario tres nombres de planetas del Sistema Solar. Con el objeto Sistema Solar, muestra los datos de los tres planetas elegidos. Asegúrate de que los nombres existen (y coinciden con las claves del objeto) y de que el usuario no introduce valores repetidos.
+        a.	Los 3 planetas deberán aparecer en el navegador, cada uno dentro de una card. Los tres estarán colocados uno junto al otro, alineados horizontalmente.
+        b.	Arriba del todo de la card aparecerá el nombre, luego la imagen y después las características (color y temperatura). */
+
+            let sistemaSolar = [
+
+                {
+                    nombre: 'mercurio',
+                    color: 'grey',
+                    temperatura: 350,
+                    imagen: 'https://www.astromia.com/fotosolar/fotos/planetamercurio.jpg'
+
+                },
+                {
+                    nombre: 'venus',
+                    color: 'white',
+                    temperatura: 460,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/220px-Venus-real_color.jpg'
+
+                },
+                {
+                    nombre: 'tierra',
+                    color: 'purple',
+                    temperatura: 14,
+                    imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg'
+                },
+                {
+                    nombre: 'marte',
+                    color: 'red',
+                    temperatura: -46,
+                    imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg'
+                },
+                {
+                    nombre: 'jupiter',
+                    color: 'brown',
+                    temperatura: -121,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/280px-Jupiter_by_Cassini-Huygens.jpg'
+                },
+                {
+                    nombre: 'saturno',
+                    color: 'yellow',
+                    temperatura: -130,
+                    imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg'
+                },
+                {
+                    nombre: 'urano',
+                    color: 'blue',
+                    temperatura: -205,
+                    imagen: 'http://www.manzanares.es/v2/sites/paseo/img/urano/urano1.jpg'
+                },
+                {
+                    nombre: 'neptuno',
+                    color: 'blue',
+                    temperatura: -220,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/280px-Neptune_Full.jpg'
+                },
+                {
+                    nombre: 'plutón',
+                    color: 'white',
+                    temperatura: -229,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg'
+                }
+
+            ];
+
+            let planeta1;
+            let planeta2;
+            let planeta3;
+
+            function clickPlaneta() {
+                planeta1 = document.getElementById("planeta1").value;
+
+                /*let planetasHTML = '';
+                if (planeta1 === planeta2 || planeta1 === planeta3 || planeta2 === planeta3 ||) {
+                    document.getElementById("planetas").innerHTML = "Hay planetas repetidos, introduce planetas diferentes"; 
+
+                    else {
+                        planetasHTML = '';
+                    }
+                    
+                }
+                */
+
+                for (let i = 0; i < sistemaSolar.length; i++) {
+                    if (planeta1 === sistemaSolar[i].nombre) {
+
+                        document.getElementById("planeta1").innerHTML += `<div><p>${sistemaSolar[i].nombre}</p></div>`;
+                        document.getElementById("imagen.planeta1").innerHTML += `<div><p><img src=${sistemaSolar[i].imagen} alt=''></p></div>`;
+                        document.getElementById("color.planeta1").innerHTML += `<div><p>${sistemaSolar[i].color}</p></div>`;
+                        document.getElementById("temperatura.planeta1").innerHTML += `<div><p>${sistemaSolar[i].temperatura}</p></div>`;
+                        document.getElementById("planeta1.id").style.backgroundColor = `${sistemaSolar[i].color}`;
+                    }
+
+                }
+
+
+
+                planeta2 = document.getElementById("planeta2").value;
+
+                for (let i = 0; i < sistemaSolar.length; i++) {
+                    if (planeta2 === sistemaSolar[i].nombre) {
+
+                        document.getElementById("planeta2").innerHTML += `<p>${sistemaSolar[i].nombre}</p>`;
+                        document.getElementById("imagen.planeta2").innerHTML += `<img src=${sistemaSolar[i].imagen} alt=''></p>`;
+                        document.getElementById("color.planeta2").innerHTML += `<p>${sistemaSolar[i].color}</p>`;
+                        document.getElementById("temperatura.planeta2").innerHTML += `<p>${sistemaSolar[i].temperatura}</p>`;
+                        document.getElementById("planeta2.id").style.backgroundColor = `${sistemaSolar[i].color}`;
+                    }
+                }
+
+
+
+
+                planeta3 = document.getElementById("planeta3").value;
+
+                for (let i = 0; i < sistemaSolar.length; i++) {
+                    if (planeta3 === sistemaSolar[i].nombre) {
+
+                        document.getElementById("planeta3").innerHTML += `<p>${sistemaSolar[i].nombre}</p>`;
+                        document.getElementById("imagen.planeta3").innerHTML += `<img src=${sistemaSolar[i].imagen} alt=''></p></div>`;
+                        document.getElementById("color.planeta3").innerHTML += `<p>${sistemaSolar[i].color}</p>`;
+                        document.getElementById("temperatura.planeta3").innerHTML += `<p>${sistemaSolar[i].temperatura}</p>`;
+                        document.getElementById("planeta3.id").style.backgroundColor = `${sistemaSolar[i].color}`;
+
+                    }
+                }
+            }
+
+
+        </script>
+    </main>
+</body>
+
+</html>

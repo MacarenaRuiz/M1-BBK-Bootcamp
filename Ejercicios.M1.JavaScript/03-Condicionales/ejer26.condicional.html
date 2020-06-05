@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let edad = parseInt(window.prompt('Qué edad tienes?'));
+        /*carnet de conducir
+        nombre y apellido
+        ciudad de recogida y número de días
+        coste alquier/día 25€
+        coste alquiler/semana 150€
+        let coste = dias *25
+        let semana 150
+        */
+
+        if (edad < 18) {
+            window.alert('No podrás alquiler un vehículo');
+        }
+
+        else {
+            carnet = window.prompt('Tiene carnet de conducir? Responde "si" ó "no"');
+        }
+        if (carnet === 'si') {
+            nombre = window.prompt('Introduce tu nombre y apellidos');
+            ciudad = window.prompt('Introduce tu ciudad de recogida del vehiculo');
+            dias = parseInt(window.prompt('Cuántos días quieres alquilar el vehículo?'))
+            if (dias <= 6) {
+                window.alert('Gracias' + nombre, 'vas a recoger el coche en ' + ciudad}
+            else {
+                window.alert('No tiener carnet de conducir para alquilar un vehiculo');
+            }
+
+
+            
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--  <button onclick="despedida()">Click</button> -->
+
+    <script>
+        console.log('hola');
+        despedida();  //significa: ejecuta esto ya
+
+
+        function despedida() {
+            console.log('adiós');
+        }
+        function holaOtraVez() {
+            console.log('hola otra vez');
+        }
+
+        setTimeout(holaOtraVez, 5000);   //significa: ejecuta esto en cuánto pase un tiempo, es decir, 5000 milisegundos.
+
+        //JSON -JavaScript Object Notation. JSON convierte js en texto para poder enviarlo por internet
+
+        let persona= {
+            nombre: 'tintin',
+            edad: 18,
+            mascota: {
+                animal: 'perro',
+                nombre: 'milu'
+            }
+        };
+
+        let personaEnTexto = JSON.stringify(persona);
+        console.log(personaEnTexto);
+
+        
+
+
+    </script>
+</body>
+
+</html>

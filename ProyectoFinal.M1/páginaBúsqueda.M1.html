@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Búsqueda M1</title>
+    <link rel="stylesheet" href="Css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+</head>
+
+<body id="background">
+    <header>
+        <h1>Spanish food</h1>
+        <div>
+            <p id="baresEuskadi">Bares de Pintxos de Euskadi</p>
+            <p class="territorios">
+            </p>
+
+            <p id="listaBaresFav">
+                <a href="">
+                    <ul id="listadoBares"></ul>
+                </a>
+            </p>
+            <a href="páginaPrincipal.M1.html" id="enlace-arriba">Volver a Inicio</a>
+    </header>
+    <main>
+        <!--  <h4>Bares de Pintxos favoritos.</h4>  -->
+
+        <div id="cajaBares">
+
+            <div>
+                <p id="listaBaresFavoritos">Lista de Bares favoritos.
+
+                <ol id="favoritos"></ol>
+                <button onclick="elimnarListaFavoritos()">Elimar Lista</button>
+                </p>
+            </div>
+
+            <div id="territoriosBares">
+                <!-- Gipuzkoa-->
+                <button onclick="gipuzkoafunction()">Gipuzkoa</button>
+                <ol id="listadoMunicipiosGipuzkoa"></ol>
+
+                <!-- Bizkaia -->
+                <button onclick="bizkaiafunction()">Bizkaia</button>
+                <ol id="listadoMunicipiosBizkaia"></ol>
+
+                <!-- Álava -->
+                <button onclick="alavafunction()">Araba/Álava</button>
+                <ol id="listadoMunicipiosAraba/Álava"></ol>
+            </div>
+    </main>
+
+
+    <footer>
+
+        <div id="pics">
+            <img src="friends.jpeg" alt="">
+            <img src="friends.red.jpeg" alt="">
+            <img src="pic1.jpeg" alt="">
+        </div>
+
+    </footer>
+
+
+
+    <script>
+        'use strict'
+        fetch('https://opendata.euskadi.eus/contenidos/ds_recursos_turisticos/bares_pintxos/opendata/bares-pintxos.json')
+            .then(function obtenerRespuesta(respuesta) {
+                return respuesta.text();
+            })
+
+            .then(function obtenerDatos(datos) {
+                const datosBrutos = datos.substring(13, datos.length - 2);
+                const resultados = JSON.parse(datosBrutos);
+                console.log(resultados);
+                resultados1 = resultados;
+            }
+            );
+
+        let resultados1;
+
+        // Gizpuzkoa
+        function gipuzkoafunction() {
+
+            let gipuzkoa = document.getElementById("listadoMunicipiosGipuzkoa").value;
+            //Ya que los municipios de Guipuzkoa me salen repetidos, he creado un array vacío, y que todos aquellos municipios q no existan en el array, los añada con push y todos aquellos que ya existen en el array, que no los añada.
+            let listadoMunicipiosGipuzkoa = [];
+
+            listadoMunicipiosGipuzkoa.indexOf(resultados1.municipality);
+            document.getElementById("listadoMunicipiosGipuzkoa").innerHTML = '';
+            for (let i = 0; i <= 132; i = i + 1) {
+                if (resultados1[i].territory === 'Gipuzkoa') {
+                    if (listadoMunicipiosGipuzkoa.indexOf(resultados1[i].municipality) === -1) {
+                        listadoMunicipiosGipuzkoa.push(resultados1[i].municipality);
+                        document.getElementById("listadoMunicipiosGipuzkoa").innerHTML += `
+                        <li>
+                            <a href = "#" onclick = "listadoBares('${resultados1[i].municipality}')" class="listadoBares">${resultados1[i].municipality} </a>
+                            <ul id="${resultados1[i].municipality}"></ul>
+                        </li>
+                        `;
+                    }
+                    else {
+                        console.log(resultados1[i].municipality + ' ya existe en la lista de Municipios de Gipuzkoa');
+                    }
+                }
+            }
+            listadoBares();
+        }
+        //Bares en cada Municipio. En vez de hacer una condición para cada municipio de cada territorio, se ha hecho una condición para todos los bares de los tres territorios (id="listaBares") y la condición consiste en comparar resultados[i].municpality (Postman) y nombreMunicipio (Gipuzkoa, Bizkaia y Álava).
+        function listadoBares(nombreMunicipio) {
+            //console.log(baresDonostia);
+            for (let i = 0; i <= 132; i = i + 1) {
+                if (resultados1[i].municipality === nombreMunicipio) {
+                    // listadoBaresDonostia.push(resultados1[i].documentName);
+                    //document.getElementById(nombreMunicipio).innerHTML += `<li>" ${resultados1[i].documentName} </li> <button onclick="guardarFavoritos('${resultados1[i].documentName}')"> Favorito`;
+                    document.getElementById(nombreMunicipio).innerHTML += `<li>" ${resultados1[i].documentName} <button onclick="guardarFavoritos('${resultados1[i].municipality}, ${resultados1[i].documentName}')"> Favorito </li>`;
+                }
+                else {
+                    console.log(resultados1[i].documentName + ` no pertenece al Municipio de ${nombreMunicipio}.`);
+                }
+            }
+        }
+
+
+
+        //Lista de bares favoritos
+        let arrayFavoritos = [];
+        arrayFavoritos = JSON.parse(localStorage.getItem("favoritos"));
+
+        if (arrayFavoritos === null) {
+            arrayFavoritos = [];
+        }
+
+        function guardarFavoritos(favoritos) {
+            arrayFavoritos.push(favoritos);
+
+            // Guardamos lista de favoritos en JSON.stringify
+            let favoritosSetJSON = JSON.stringify(arrayFavoritos); //Declara una variable para set
+            localStorage.setItem("favoritos", favoritosSetJSON);
+            mostrarFavoritos();
+        }
+
+        mostrarFavoritos();
+        function mostrarFavoritos() {
+            document.getElementById("favoritos").innerHTML = '';
+            for (let i = 0; i < arrayFavoritos.length; i++) {
+                document.getElementById("favoritos").innerHTML += `<li>${arrayFavoritos[i]}</li>`;
+                //arrayFavoritos es dónde guardamos todos los bares.
+            }
+        }
+
+        //Recuperación de datos de localStorage siempre fuera de la función
+
+        // let favoritosGetJSON = localStorage.getItem("favoritos");  // Declara una variable para get
+        //favoritosGetJSON = JSON.parse("favoritos");
+        //let favoritosGetJSON = JSON.parse(localStorage.getItem("favoritos"));   <-- Lo colocamos arriba, después del array, el código se lee de arriba a abajo
+
+
+
+        //Bizkaia Municipios
+        function bizkaiafunction() {
+            let bizkaia = document.getElementById("listadoMunicipiosBizkaia").value;
+
+            let listadoMunicipiosBizkaia = [];
+            listadoMunicipiosBizkaia.indexOf(resultados1.municipality);
+            document.getElementById("listadoMunicipiosBizkaia").innerHTML = '';
+            for (let i = 0; i <= 132; i = i + 1) {
+                if (resultados1[i].territory === 'Bizkaia') {
+                    if (listadoMunicipiosBizkaia.indexOf(resultados1[i].municipality) === -1) {
+                        listadoMunicipiosBizkaia.push(resultados1[i].municipality);
+                        document.getElementById("listadoMunicipiosBizkaia").innerHTML += `
+                    <li>
+                        <a href = "#" onclick = "listadoBares('${resultados1[i].municipality}')" class="listadoBares">${resultados1[i].municipality} </a>
+                        <ul id="${resultados1[i].municipality}"> </ul>
+                    </li>
+                    `;
+                    }
+                    else {
+                        console.log(resultados1[i].municipality + ' ya existe en la lista de Municipios de Bizkaia');
+                    }
+                }
+            }
+        }
+        //Álava Municipios
+        function alavafunction() {
+            let alava = document.getElementById("listadoMunicipiosAraba/Álava").value;
+            let listadoMunicipiosAlava = [];
+            listadoMunicipiosAlava.indexOf(resultados1.municipality);
+            document.getElementById("listadoMunicipiosAraba/Álava").innerHTML = '';
+            for (let i = 0; i <= 132; i = i + 1) {
+                if (resultados1[i].territory === 'Araba/Álava') {
+                    if (listadoMunicipiosAlava.indexOf(resultados1[i].municipality) === -1) {
+                        listadoMunicipiosAlava.push(resultados1[i].municipality);
+                        document.getElementById("listadoMunicipiosAraba/Álava").innerHTML += `
+                    <li>
+                        <a href = "#" onclick = "listadoBares('${resultados1[i].municipality}')" class="listadoBares">${resultados1[i].municipality} </a>
+                        <ul id="${resultados1[i].municipality}"> </ul>
+                    </li>
+                    `;
+                    }
+                    else {
+                        console.log(resultados1[i].municipality + ' ya existe en la lista de Municipios de Araba/Álava');
+                    }
+                }
+            }
+        }
+
+        /*
+
+        Op1.
+        function elimnarListaFavoritos() {
+            arrayFavoritos = [];
+        localStorage.removeItem("favoritos");
+        }
+
+
+        Op2. Eliminar lista vacia
+        */
+        function elimnarListaFavoritos() {
+            arrayFavoritos = []; //Array vacío cuándo le damos click
+            let arrayVacioEnJson = JSON.stringify(arrayFavoritos); //Declaramos una variable (arrayVacioEnJson) y guardamos en  ella el array vacio (arrayFavoritos)
+            localStorage.setItem('favoritos', arrayVacioEnJson);
+            localStorage.setItem('favoritos', arrayFavoritos);
+        }
+
+
+        
+        /*
+        Op3. 
+        function elimnarListaFavoritos (){
+            arrayFavoritos = []; //Array vacío cuándo le damos click
+            localStorage.setItem ('favoritos', arrayFavoritos);
+        }
+        */
+
+
+
+    </script>
+</body>
+
+</html>

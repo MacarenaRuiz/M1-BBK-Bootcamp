@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p id="personajes"></p>
+        <p id="images"></p>
+
+
+    </div>
+
+    <script>
+
+        fetch('https://rickandmortyapi.com/api/character/')
+
+            //Url
+            .then(
+                function cogerRespuesta(respuesta) {
+                    return respuesta.json();
+
+                }
+            )
+
+            //Info que queremos obtener
+            .then(
+                function cogerData(datos) {
+                    let personaje = '';
+                    let images = '';
+
+                    for (let i = 0; i < datos.results.length; i = i + 1) {
+
+                        console.log(datos.results[i].name);
+                        console.log(datos.results[i].image);
+                        document.getElementById("personajes").innerHTML += `<div><p>${datos.results[i].name}</p></div>`;
+                        document.getElementById("personajes").innerHTML += `<div><img src="${datos.results[i].image}"/></div>`;
+                    }
+
+                }
+
+            )
+    </script>
+</body>
+
+</html>

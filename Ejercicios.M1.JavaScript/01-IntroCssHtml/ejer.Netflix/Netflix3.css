@@ -1,0 +1,233 @@
+header{
+    background-image:url("series.jpg");
+    border-bottom: 8px solid gray;
+}
+
+body{
+    background-color: black;
+}
+
+.cabecera-netflix {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between; 
+}
+
+.cabecera-netflix img{
+    padding: 25px;
+    height: 30px;
+}
+
+/* Iniciar sesión*/
+.cabecera-netflix p {
+padding: 15px;
+margin-right: 25px;
+border-radius:2px;
+background-color: red;
+color: white;
+Padding: 0.7% 0.5%;
+font-size: 20px; 
+
+}
+
+.cabecera-central{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.cabecera-central h1 {
+    width: 30%;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-family:'Netflix Sans';
+}
+
+/* Preguntar sobre el tipo de letras y pq strong afecta a todos los parrafos*/
+
+.cabecera-central h2{
+    margin-top: 3px;
+    font-size:12px;
+    font-family: 'Helvetica';
+}
+
+.correo-electronico {
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    background-color: red;
+    color: white;
+}
+.cabecera-central h3 {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+
+/* Seccion1 */
+.Seccion1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    border-bottom: 8px solid gray;
+    padding: 40px;
+}
+
+.seccion-parrafos1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 30px;
+    padding-bottom: 25px;
+    margin-left: 20px;
+    width: 80%;
+   }
+   .Seccion1 img {
+    padding-bottom: 20px;
+}
+
+   /*Seccion2 */
+   .Seccion2 {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    color: white;
+    border-bottom: 8px solid gray;
+   
+   
+   }
+
+   .seccion-parrafos2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    padding-bottom: 25px;
+    padding-right: 20px;
+    margin-right: 20px;
+    width: 80%;
+    
+   }
+   .Seccion2 img {
+    padding-bottom: 20px;
+   width:90%;
+   }
+.Descarga{
+font-size: 40px;
+margin-bottom: 0px;
+
+}
+
+.Guarda{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+ /*Seccion3 */
+
+.Seccion3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    border-bottom: 8px solid gray;
+    padding: 40px;
+}
+
+.Seccion3 img {
+  padding-bottom: 20px; 
+  width: 90%;
+}
+.Disfruta-en-todas-partes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 30px;
+    width: 50%;
+   }
+   .Seccion1 img {
+    padding-bottom: 20px;
+}
+
+.Reproduce-en-todas-partes {
+    width:60%;
+    font-size: 20px;
+}
+
+/*Seccion4 */
+
+h1{
+    align-items: center;
+}
+
+.seccion4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-bottom: 8px solid gray;
+}
+
+.seccion4 h2{
+    border-radius: 10px;  
+}
+
+.lista li{
+    background-color: gray;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 10px;
+}
+
+.correo-electronico2{
+margin-right: 20px;
+display: flex;
+flex-direction: row;
+font-size: 15px;
+background-color: red;
+color: white;
+}
+
+
+/*Secccion 5: Preguntas? Contacta con nosotros */
+
+h5{
+    color:gray;
+    padding: 40px;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 15px;   
+  
+}
+
+.lista-footer{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: gray;
+    font-size: 13px;
+    font-family: Helvetica;
+}
+
+.lista-footer ul {
+    list-style: none;
+}
+
+.Español{
+    color:gray;
+    border-radius: 10px;
+    border: 5px solid gray;
+    width: 55px;
+   
+}
+.Netflix-footer {
+    color: gray;
+    border-bottom: 1px solid gray;
+    margin: 5px;
+    margin-bottom: 10px;
+
+}

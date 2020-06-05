@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Ejercio 8 - Arrays
+    </h4>
+    <div id="suma"></div>
+    <p id="media"></p>
+    <script>
+        let valores = [];
+        let suma = 0;
+        let media;
+
+
+        for (i = 0; i < 20; i = i + 1) {
+            valores[i] = (Math.floor(Math.random() * 17) + 18);
+            //math.flor (math.random()*17)+18) Entre el número 17 y 35 (17+18)
+            //En la posición 0, se genera un número random; en la posición 1, se genera otro...   
+        }
+
+        console.log(valores);
+
+
+        for (i = 0; i < 20; i = i + 1) {
+            suma = suma + valores[i];
+        }
+
+
+        //Declaramos la variable media
+        media = suma / 20;
+
+        console.log(suma);
+        document.getElementById("suma").innerHTML += `<div>${suma} es la suma</div>`;
+
+        console.log(media);
+        document.getElementById("media").innerHTML += `<div><p>${media} es la media</p></div>`;
+
+
+    </script>
+</body>
+
+</html>

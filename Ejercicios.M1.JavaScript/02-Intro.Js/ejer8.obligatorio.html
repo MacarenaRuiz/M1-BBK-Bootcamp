@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+ 
+
+        let suma = window.prompt ("Escribe una suma");
+        let posicion = suma.indexOf('+');
+
+        let numeroDosPosicion = posicion+1;
+        let numeroUno = suma.substring(0,posicion);
+        let numeroDos = suma.substring (numeroDosPosicion);
+
+        window.alert ('Los numeros son:' +numeroUno+'y' +numeroDos);
+        console.log ('Los numeros son:' +numeroUno+'y' +numeroDos);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="saludo"></h1>
+    <script>
+        let nombre = window.prompt('Cómo te llamas?');
+        window.alert('Hola ' + nombre.toUpperCase());
+
+
+
+        document.getElementById('saludo').innerHTML += `<h1>${'Hola ' + nombre.toUpperCase()}</h1>`;
+        // document.getElementById('saludo').innerHTML = document.getElementById('saludo').innerHTML + `<h1>${'Hola '+ nombre.toUpperCase()}</h1>`;
+    </script>
+</body>
+
+</html>

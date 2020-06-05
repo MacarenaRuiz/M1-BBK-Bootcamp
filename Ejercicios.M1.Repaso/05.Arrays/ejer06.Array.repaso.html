@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Ejercicio 6 - Arrays repaso</h3>
+    <div id="resultado">Resultado</div>
+
+    <script>
+        /*Crear un array. Usar un for para pedir 3 valores al usuario y guardarlos en el mismo.
+         Comparar los valores del array una vez tenga los 3 valores y mostrar en pantalla el más pequeño.*/
+
+        let numero = [];
+
+        for (i = 0; i < 3; i = i + 1) {
+            numero[i] = parseInt(window.prompt('Dime tres valores'));
+            console.log(numero[i])
+            document.getElementById("resultado").innerHTML += `<div>${numero[i]} es el número introducidos por el usuario.</div>`;
+
+
+
+
+            if (numero[0] < numero[1] && numero[0] < numero[2]) {
+                console.log(numero[0]);
+                document.getElementById("resultado").innerHTML += `<div>${numero[0]} es el número más pequeño, posición 0.</div>`;
+            }
+            else if (numero[1] < numero[0] && numero[1] < numero[2]) {
+                console.log(numero[1]);
+                document.getElementById("resultado").innerHTML += `<div>${numero[1]} es el número más pequeño, posición 1.</div>`;
+            }
+            else if (numero[2] < numero[1] && numero[2] < numero[0]) {
+                console.log(numero[3]);
+                document.getElementById("resultado").innerHTML += `<div>${numero[3]} es el número más pequeño, posición 2.</div>`;
+            }
+         
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 2 - Objetos Repaso</h2>
+    <div id="resultado">Resultado</div>
+    <script>
+        let persona = {
+            nombre: 'Macarena',
+            edad: 29
+        }
+
+        console.log(persona);
+
+        persona.altura = 1.62;
+        console.log(persona);
+
+        document.getElementById("resultado").innerHTML += `<div>${persona.altura} es la altura. ${persona.nombre} es el nombre de la persona.</div>`;
+
+    </script>
+</body>
+
+</html>

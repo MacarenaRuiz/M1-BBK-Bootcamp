@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numero = (window.prompt('Dime un número entre 25 y 75'));
+        let numero1 = (window.prompt('Dime otro número entre 25 y 75'));
+
+
+        console.log('El numero es ' + numero);
+        console.log('El numero1 es ' + numero1);
+
+        let a = (numero.substring(0, 1));
+        let b = (numero1.substring(0, 1));
+        let c = (numero.substring(1));
+        let d = (numero1.substring(1));
+
+
+        console.log(a + ' es el primer digito de la variable numero');
+        console.log(b + ' es el primer digito de la variable numero1');
+        console.log(c + ' es el segundo digito de la variable numero');
+        console.log(d + ' es el segundo digito de la variable numero1');
+
+
+
+
+
+        if (a === b || c === d) {
+            console.log('Coincide un dígito del ' + numero + ' y ' + numero1);
+        }
+        else if (a === d || b === c) {
+            console.log('Coincide un dígito del ' + numero + ' y ' + numero1);
+        }
+        else {
+            console.log('No coincide ningún dígito');
+        }
+
+
+        /*
+
+               if (a === b) {
+                   console.log('Coincide un dígito del ' + numero + ' y ' + numero1);
+               }
+               else if (c === d) {
+                   console.log('Coincide un dígito del ' + numero + ' y ' + numero1);
+               }
+               else if (a === d) {
+                   console.log('Coincide un dígito del ' + numero + ' y ' + numero1);
+               }
+               else if (b === c) {
+                   console.log('Coincide un dígito del ' + numero + ' y ' + numero1);
+               }
+               else {
+                   console.log('No coincide ningún dígito');
+               }
+
+               */
+    </script>
+</body>
+
+</html>

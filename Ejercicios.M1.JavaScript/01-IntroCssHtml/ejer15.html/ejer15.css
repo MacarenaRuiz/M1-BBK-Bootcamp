@@ -1,0 +1,33 @@
+
+            header {
+                display: flex;    
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: rgb(92, 130, 179);
+                padding: 10px 36 px;
+                align-items: center;
+            }
+
+            h1 {
+                color: white;
+                margin-bottom: 0px;
+            }
+
+            h2 {
+                color: white;
+                font-size: 10px;
+                margin-top: 0px;
+            }
+
+         .h2 {
+             text-align: right;
+             padding-bottom: 25px;
+            }
+
+            a {
+                color:white;
+                padding : 10px;
+                text-decoration: none;
+            }
+            
+    /* margin-bottom de h1 (titulo) y margin-top de h2 (subtitulo), con esto conseguimos que el subtítulo tiene que acercarse al título */

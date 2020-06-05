@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ejer08.objetos.Repaso.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Planetas - Sistema Solar</h1>
+    </header>
+
+    <main>
+
+    
+
+
+        <div id="planetillas">
+            <div id="planeta1.id">
+                <p id="planeta1"></p>
+                <p id="imagen.planeta1"></p>
+                <p id="color.planeta1"></p>
+                <p id="temperatura.planeta1"></p>
+            </div>
+
+            <div id="planeta2.id">
+                <p id="planeta2"></p>
+                <p id="imagen.planeta2"></p>
+                <p id="color.planeta2"></p>
+                <p id="temperatura.planeta2"></p>
+            </div>
+
+            <div id="planeta3.id">
+                <p id="planeta3"></p>
+                <p id="imagen.planeta3"></p>
+                <p id="color.planeta3"></p>
+                <p id="temperatura.planeta3"></p>
+            </div>
+
+
+        </div>
+
+
+        <style>
+
+        </style>
+
+
+        <script>
+            /*	Pedir al usuario tres nombres de planetas del Sistema Solar. Con el objeto Sistema Solar, muestra los datos de los tres planetas elegidos. Asegúrate de que los nombres existen (y coinciden con las claves del objeto) y de que el usuario no introduce valores repetidos.
+        a.	Los 3 planetas deberán aparecer en el navegador, cada uno dentro de una card. Los tres estarán colocados uno junto al otro, alineados horizontalmente.
+        b.	Arriba del todo de la card aparecerá el nombre, luego la imagen y después las características (color y temperatura). */
+
+            let sistemaSolar = {
+
+                mercurio: {
+                    nombre: 'mercurio',
+                    color: 'gray',
+                    temperatura: 350,
+                    imagen: 'https://www.astromia.com/fotosolar/fotos/planetamercurio.jpg'
+
+                },
+                venus: {
+                    nombre: 'venus',
+                    color: 'white',
+                    temperatura: 460,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/220px-Venus-real_color.jpg'
+
+                },
+                tierra: {
+                    nombre: 'tierra',
+                    color: 'purple',
+                    temperatura: 14,
+                    imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg'
+                },
+                marte: {
+                    nombre: 'marte',
+                    color: 'red',
+                    temperatura: -46,
+                    imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg'
+                },
+                jupiter: {
+                    nombre: 'jupiter',
+                    color: 'brown',
+                    temperatura: -121,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/280px-Jupiter_by_Cassini-Huygens.jpg'
+                },
+                saturno: {
+                    nombre: 'saturno',
+                    color: 'yellow',
+                    temperatura: -130,
+                    imagen: 'https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg'
+                },
+                urano: {
+                    nombre: 'urano',
+                    color: 'blue',
+                    temperatura: -205,
+                    imagen: 'http://www.manzanares.es/v2/sites/paseo/img/urano/urano1.jpg'
+                },
+                neptuno: {
+                    nombre: 'neptuno',
+                    color: 'blue',
+                    temperatura: -220,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/280px-Neptune_Full.jpg'
+                },
+                pluton: {
+                    nombre: 'plutón',
+                    color: 'white',
+                    temperatura: -229,
+                    imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg'
+                }
+
+            };
+
+
+            let planeta1 = (window.prompt('Dime un planeta1')).toLowerCase();
+            let planeta2 = (window.prompt('Dime un planeta2')).toLowerCase();
+            let planeta3 = (window.prompt('Dime un planeta3')).toLowerCase();
+
+
+            //plaenta1
+            document.getElementById("planeta1").innerHTML += `<div><p>${sistemaSolar[planeta1].nombre}</p></div>`;
+            document.getElementById("imagen.planeta1").innerHTML += `<div><p><img src=${sistemaSolar[planeta1].imagen} alt=''></p></div>`;
+            document.getElementById("color.planeta1").innerHTML += `<div><p>${sistemaSolar[planeta1].color}</p></div>`;
+            document.getElementById("temperatura.planeta1").innerHTML += `<div><p>${sistemaSolar[planeta1].temperatura}</p></div>`;
+            document.getElementById("planeta1.id").style.backgroundColor = `${sistemaSolar[planeta1].color}`;
+
+            //planeta2
+            document.getElementById("planeta2").innerHTML += `<p>${sistemaSolar[planeta2].nombre}</p>`;
+            document.getElementById("imagen.planeta2").innerHTML += `<img src=${sistemaSolar[planeta2].imagen} alt=''></p>`;
+            document.getElementById("color.planeta2").innerHTML += `<p>${sistemaSolar[planeta2].color}</p>`;
+            document.getElementById("temperatura.planeta2").innerHTML += `<p>${sistemaSolar[planeta2].temperatura}</p>`;
+            document.getElementById("planeta2.id").style.backgroundColor = `${sistemaSolar[planeta2].color}`;
+
+            //planeta3
+            document.getElementById("planeta3").innerHTML += `<p>${sistemaSolar[planeta3].nombre}</p>`;
+            document.getElementById("imagen.planeta3").innerHTML += `<img src=${sistemaSolar[planeta3].imagen} alt=''></p></div>`;
+            document.getElementById("color.planeta3").innerHTML += `<p>${sistemaSolar[planeta3].color}</p>`;
+            document.getElementById("temperatura.planeta3").innerHTML += `<p>${sistemaSolar[planeta3].temperatura}</p>`;
+            document.getElementById("planeta3.id").style.backgroundColor = `${sistemaSolar[planeta3].color}`;
+
+
+
+        </script>
+    </main>
+</body>
+
+</html>

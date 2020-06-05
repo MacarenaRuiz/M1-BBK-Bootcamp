@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let nota = parseInt(window.prompt('Qué nota has sacado entre el 0 y el 10?'));
+        /*
+                if (nota === 0) {
+                    window.alert('suspenso');
+                }
+                else if (nota === 1) {
+                    window.alert('suspenso');
+                }
+                else if (nota === 2) {
+                    window.alert('suspenso');
+                }
+                else if (nota === 3) {
+                    window.alert('suspenso');
+                } else if (nota === 4) {
+                    window.alert('suspenso');
+                }
+                else if (nota >= 5 && nota < 6) {
+                    window.alert('suficiente');
+                } else if (nota >= 6 && nota < 7) {
+                    window.alert('bien');
+                } else if (nota >= 7 && nota < 9) {
+                    window.alert('notable');
+                }
+                else if (nota <= 9 && nota > 10) {
+                    window.alert('sobresaliente');
+                }
+        
+        */
+
+
+
+
+        switch (nota <= 10) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4: window.alert('Has suspendido');
+                break;
+            case (nota >= 5 && nota < 6): window.alert('Suficiente');
+                break;
+            case (nota >= 6 && nota < 7): window.alert('Bien');
+                break;
+            case (nota >= 7 && nota < 9): window.alert('Notable');
+                break;
+            case 9:
+            case 10(nota <= 9 && nota > 10): window.alert('Sobresaliente');
+                break;
+        }
+
+
+    </script>
+</body>
+
+</html>

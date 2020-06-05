@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use of strict'
+
+        let examen1 = parseInt(window.prompt('Dame una nota del 0 al 5'));
+        let examen2 = parseInt(window.prompt('Dame una nota del 0 al 5'));
+        let examen3 = parseInt(window.prompt('Dame una nota del 0 al 5'));
+        let notaFinal;
+
+        console.log(examen1 + ' es examen1');
+        console.log(examen2 + ' es examen2');
+        console.log(examen3 + ' es examen3');
+
+
+        if (examen1 > examen2) {
+            console.log(notaFinal = examen3 + examen1);
+        }
+        else if (examen2 > examen1) {
+            console.log(notaFinal = examen2 + examen3);
+        }
+
+        switch (notaFinal <= 10) {
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4: console.log('Has suspendido');
+                break;
+            case (5 <= notaFinal && 6 > notaFinal): console.log('Suficiente');
+                break;
+            case (6 <= notaFinal && 7 > notaFinal): console.log('Bien');
+                break;
+            case (7 <= notaFinal && 9 > notaFinal): console.log('Notable');
+                break;
+            case (9 <= notaFinal && 10 > notaFinal): console.log('Sobresaliente');
+                break;
+            case (10 === notaFinal): console.log('Matriculate');
+                break;
+        }
+</script>
+                
+</body >
+
+</html >

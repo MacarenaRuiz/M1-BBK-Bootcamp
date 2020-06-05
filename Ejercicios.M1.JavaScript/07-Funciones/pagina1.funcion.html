@@ -1,0 +1,36 @@
+html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let saludo = 'hola';
+        mostrarMensajeTresVeces(saludo);
+        
+        let despedida = 'adiós';
+        mostrarMensajeTresVeces(despedida);
+
+        function mostrarMensajeTresVeces(mensaje) {
+            console.log(mensaje);
+            console.log(mensaje);
+            console.log(mensaje);
+        }
+
+        sumar(2, 4);
+        sumar(8, 5);
+
+        // es una función pura, ya que todos los valores que utiliza los recibe al llamarse la función (no depende de valores definidos en otro lado)
+        function sumar(a,b) {
+            let resultado = a + b;
+            window.alert(resultado);
+        }
+    </script>
+    <!-- 
+        podemos añadir más archivos de js con <script src="nombreArchivo.js"></script>
+        Podríamos poner la función de sumar en un archivo y la llamada de sumar(2, 4); y sumar(8,3); en el otro archivo.
+    -->
+</body>
+</html>

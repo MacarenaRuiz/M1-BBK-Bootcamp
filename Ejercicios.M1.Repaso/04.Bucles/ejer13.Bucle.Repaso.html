@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="resultado"></div>
+    <script>
+        let valor;
+
+        valor = window.prompt('Dame un valor de tres dígitos');
+        console.log(valor.substring(0, 1) + ' es el primer dígito');
+        console.log(valor.substring(1, 2) + ' es el segundo dígito');
+        console.log(valor.substring(2) + ' es el segundo dígito');
+
+        let suma = (parseInt(valor.substring(0, 1))) + (parseInt(valor.substring(1, 2))) + (parseInt(valor.substring(2)));
+        console.log (suma);
+
+        document.getElementById("resultado").innerHTML += `<div>La suma de los tres dígitos del valor es un total de ${suma}</div>`;
+
+    </script>
+</body>
+
+</html>

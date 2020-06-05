@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h4>Ejercicio 4 - Funciones</h4>
+    <div id="resultado"></div>
+    <script>
+        /*
+4.	Escribe una función que devuelva el resultado de sumar los dos parámetros que le pasamos. Pide al usuario 2 números. Usa esos 2 números como parámetros de la función y después asigna el valor que devuelve la función a una tercera variable. Finalmente, muestra el valor de la variable en la consola.
+
+        */
+
+
+        function numeros(numero1, numero2) {
+            numero1 = parseInt(window.prompt('Dime un número'));  //let no hace falta ponerlo, porq está dentro del paréntesis de la function
+            numero2 = parseInt(window.prompt('Dime otro número')); // lo mismo q antes
+            console.log(numeros);
+
+            let numero3 = (numero1 + numero2);
+            console.log(numero3);
+            document.getElementById("resultado").innerHTML += `<div>${numero3} es la suma de los dos números que ha dado el usuario.</div>`;
+
+
+        }
+
+        numeros();
+
+    </script>
+</body>
+
+</html>

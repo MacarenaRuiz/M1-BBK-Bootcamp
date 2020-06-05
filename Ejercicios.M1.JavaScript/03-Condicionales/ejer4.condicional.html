@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        let numero1;
+        numero1 = parseInt(window.prompt('dame un número'));
+        let numero2;
+        numero2 = parseInt(window.prompt('dame un otro número'));
+        let numero3;
+        numero3 = parseInt(window.prompt('dame otro número'));
+
+        let posibilidadA = numero1 - numero2;
+        let posibilidadB = numero1 - numero3;
+        let posibilidadC = numero2 - numero1;
+        let posibilidadD = numero2 - numero3;
+        let posibilidadE = numero3 - numero1;
+        let posibilidadF = numero3 - numero2;
+
+
+        if (posibilidadA === 20) {
+            console.log('numero1 - numero2 es ' + posibilidadA + '  es posibilidadA');
+        }
+        else if (posibilidadB === 20) {
+            console.log('numero1 - numero3 es ' + posibilidadB + ' es posibilidadB');
+        }
+        else if (posibilidadC === 20) {
+            console.log('numero2 - numero1 es ' + posibilidadC + ' es posibilidadC');
+        }
+        else if (posibilidadD === 20) {
+            console.log('numero2 - numero3 es ' + posibilidadD + ' es posibilidadD');
+        }
+        else if (posibilidadE === 20) {
+            console.log('numero3 - numero1 es ' + posibilidadE + ' es posibilidadE');
+        }
+
+        else if (posibilidadF === 20) {
+            console.log('numero3 - numero2 es ' + posibilidadF + ' es posibilidadF')
+        }
+        else {
+            console.log('ningún número de los dados es 20 menos exactamente')
+        }
+    </script>
+</body>
+
+</html>

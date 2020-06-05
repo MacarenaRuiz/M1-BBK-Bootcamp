@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Resultado rectángulo</h1>
+    <div id="resultado">
+        <p></p>
+    </div>
+
+    <script>
+        //let area = altura * anchura;
+        //let perimetro = (altura*anchura)*2;
+
+        let area;
+        let perimetro;
+
+        let anchura = parseInt(window.prompt('Dime la anchura del rectángulo'));
+        let altura = parseInt(window.prompt('Dime la altura del rectángulo'));
+        console.log(altura * anchura + ' es el area del rectángulo');
+        console.log(((altura * anchura) * 2) + ' es el perimetro del rectángulo');
+
+        //area
+        document.getElementById('resultado').innerHTML = document.getElementById('resultado').innerHTML + `<div>${altura * anchura} ${(altura * anchura) * 2}</div>`;
+
+        /* perimetro
+        document.getElementById('resultado').innerHTML += `<div>${(altura * anchura) * 2} ${altura * anchura}</div>`; */
+
+    </script>
+</body>
+
+</html>

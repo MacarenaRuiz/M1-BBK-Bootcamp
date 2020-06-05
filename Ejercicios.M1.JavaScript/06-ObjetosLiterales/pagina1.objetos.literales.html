@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nombre = ['pepe', 'maca', 'lolo'];
+
+        nombre[3] = 'ana';
+        console.log(nombre);
+
+        nombre.push('eugenio');
+        console.log(nombre);
+        console.log(nombre.pop());
+        console.log(nombre);
+
+        let personas = { personajes: 'batman', edad: 24, comidaFavorita: 'galletas' };
+        console.log(personas);
+        console.log(personas.edad);
+        document.write(personas.comidaFavorita);
+
+        document.write(personas.edad);
+
+        personas.domicilio = 'bilbao';
+        console.log(personas);
+
+        
+        delete personas.domicilio;
+        console.log(personas);
+
+        let coches = { modelo1: 'ferrari', modelo2: 'batimovil' };
+
+         personas.coches = coches;
+        console.log(personas);
+
+
+
+// Sacar variables de propiedades
+
+let personita = {
+    nombrecito: 'mario',
+    edad: 25
+}
+
+let {nombrecito, edad} = personita;
+console.log (nombrecito);
+console.log (edad);
+
+    </script>
+</body>
+
+</html>

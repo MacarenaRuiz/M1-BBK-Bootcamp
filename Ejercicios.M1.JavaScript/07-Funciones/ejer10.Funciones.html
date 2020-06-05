@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h4>Ejercicio 10 - Funciones</h4>
+        <h5> Figuras </h5>
+        
+        <p id="circulo">Círculo</p>
+        <p id="cuadrado">Cuadrado</p>
+        <p id="triangulo">Triángulo</p>
+    </div>
+    <script>
+        /* 10.	Crea una aplicación que nos calcule el área de un círculo, cuadrado o triángulo. Pediremos de qué figura queremos calcular su área y según lo introducido pedirá los valores necesarios para calcular el área. Crea un método por cada figura para calcular cada área, este devolverá un número entero(sin decimales). Muestra el resultado por pantalla
+a.	Circulo: (radio^2)*PI
+b.	Triángulo: (base * altura) / 2
+c.	Cuadrado: lado * lado
+*/
+
+        function pregunta(resultado) {
+            pregunta = window.prompt('¿Qué figura quieres cálcular?').toLowerCase();
+
+            if (pregunta === 'circulo') {
+                let resultado = circulo();
+            }
+
+            else if (pregunta === 'cuadrado') {
+                let resultado = cuadrado();
+            }
+
+            else if (pregunta === 'triangulo') {
+                let resultado = triangulo();
+            }
+        }
+
+        function circulo() {
+            radio = parseInt(window.prompt('Has elegido la firgura círculo! Ahora dime un valor para calcular el área'));
+            resultado = ((radio ** 2) * 3.1415);
+            console.log(resultado + ' es la área del círculo.');
+            document.getElementById("circulo").innerHTML += `<div><p>${resultado}</p></div>`;
+        }
+
+        function cuadrado() {
+            valor = parseInt(window.prompt('Has elegido la figura cuadrado! Ahora dime un valor para calcular el área'));
+            base1 = parseInt(window.prompt('Has elegido la firgura círculo! Ahora dime un valor para calcular el área'));
+            base2 = parseInt(window.prompt('Has elegido la firgura círculo! Ahora dime un valor para calcular el área'));
+            resultado = (base1 * base2);
+            console.log(resultado + ' es la área del cuadrado.');
+            document.getElementById("cuadrado").innerHTML += `<div><p>${resultado}</p></div>`;
+        }
+
+        function triangulo() {
+            base = parseInt(window.prompt('Has elegido la figura triámgulo, ahora dime un valor para calcular el área'));
+            altura = parseInt(window.prompt('Dime otro valor para calcular el área'));
+            resultado = ((base * altura) / 2);
+            console.log(resultado + ' es la área del tiángulo.');
+            document.getElementById("triangulo").innerHTML += `<div><p>${resultado}</p></div>`;
+        }
+
+        pregunta()
+
+
+    </script>
+</body>
+
+</html>

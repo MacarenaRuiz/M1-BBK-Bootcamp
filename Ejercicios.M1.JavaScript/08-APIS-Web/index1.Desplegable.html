@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <select id="papeleria">
+
+        <option value="bolígrafo negro">Bolígrafo negro</option>
+        <option value="bolígrafo rojo">Bolígrafo rojo</option>
+        <option value="bolígrafo azul">Bolígrafo azul</option>
+        <option value="bolígrafo verde">Bolígrafo verde</option>
+    </select>
+
+    <button onclick="mostrarBoligrafo()">Click</button>
+    <script>
+        function mostrarBoligrafo() {
+            let desplegado = document.getElementById("papeleria");
+            window.alert(desplegado.value);
+        }
+
+    </script>
+</body>
+
+</html>

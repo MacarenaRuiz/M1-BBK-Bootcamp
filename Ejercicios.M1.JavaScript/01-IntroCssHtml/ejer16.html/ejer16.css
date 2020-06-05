@@ -1,0 +1,38 @@
+header {
+    
+    color:green;
+    display: flex;    
+    justify-content: space-between;
+    background-color: rgb(179, 92, 172);
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    align-items: center;
+     font: 60px;
+
+ 
+}
+
+.titulos {
+    width: 50%;
+}
+.listas{
+    color: rgb(179, 92, 172);
+    background-color: rgb(72, 175, 72);
+   border-radius: 10px;
+   width: 200px;
+   padding-top: 10px;
+   padding-right: 25px;
+   padding-bottom: 10px;
+   padding-left: 65px;  
+}
+
+ul {
+    list-style: none;
+}
+
+p.listas {
+    justify-content: space-between; 
+    align-items: center;
+}

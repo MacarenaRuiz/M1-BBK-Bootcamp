@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // pedir valor
+        // acumulador de valores
+        //condicion valor === o y se rompe
+        // otra condicion valor !==0, siga preguntando valor
+
+        let valor;
+        let acumulador = 0;
+        let i;
+
+
+        do {
+            valor = parseInt(window.prompt('Dame un valor'));
+
+
+            if (valor === 0) {
+                console.log(i);
+            }
+
+            else if (valor !== 0) {
+                for (i = 1; i <= valor; i++) {
+                    console.log(acumulador = acumulador + i);
+
+                }
+
+            }
+        }
+
+        while (valor !== 0);
+
+
+
+/* Primero hes anotado todo los que nos pedía el problema, después hemos declarado las variables. 
+Hemos aplicado el DO-While. En el Do pedimos el valor y añadimos un if (valor ===0), no salga nada.
+Además hemos añadido un else if (valor !== 0) con una condición for. Si el valor es menor al i, sigue acumulando y preguntando un nuevo valor.
+Y en while comprobamos que el valor siga siendo distinto de cero para que me pregunte de nuevo. 
+*/
+
+    </script>
+</body>
+
+</html>

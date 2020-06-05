@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4>Ejercicio 4 - Arrays</h4>
+    <div id="Resultado"></div>
+
+    <script>
+        let nombre = [];
+        let length = parseInt(window.prompt('Dime el largo de tu array'));
+
+        //Pedir al usuario que introduzca valores a cada una de las posiciones
+        for (i = 0; i <= length; i++) {
+            nombre[i] = window.prompt('Dame un nombre');
+
+        }
+        console.log(nombre);
+
+
+        //Usar otro for para mostrarlo en pantalla
+
+        for (let i = 0; i < nombre.length; i++) {
+            console.log[i];
+
+        }
+
+        console.log(nombre[0]);
+        console.log(nombre[1]);
+        console.log(nombre[2]);
+        console.log(nombre[3]);
+
+       // document.getElementById("Resultado").innerHTML += `<div>${nombre[0]} ${nombre[1]} ${nombre[2]} ${nombre[3]} ${nombre[4]} son los nombres dados por el usuario</div>`;
+
+
+    </script>
+</body>
+
+</html>

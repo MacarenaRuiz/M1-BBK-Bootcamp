@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejercicio 5 - Arrays Repaso</h2>
+    <div id="resultado"></div>
+
+    <script>
+        /*	Poner los nombres de los meses en un array de 12 posiciones. 
+        Cuando el usuario introduce un número del 1 al 12, mostrar el nombre de ese mes en pantalla */
+
+        let meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+        let numero = parseInt(window.prompt('Introduce una posición'));
+        console.log(meses[numero]);
+
+        document.getElementById("resultado").innerHTML += `<div><strong>${meses[numero]}</strong> es el mes que se encuentra en la posición que has introducido.</div>`;
+
+
+    </script>
+</body>
+
+</html>

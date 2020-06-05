@@ -1,0 +1,29 @@
+
+    p {
+        color: rgb(0, 195, 255);
+
+        font-size: 30px;
+
+    }
+
+    /*
+ Normas:     #el-nombre-del-id{}
+            .nombre-de-la-clase{}
+            si ponemos el cursor encima de '.spoiler', aparece jerarquicamente la importancia del (id,clase,etiqueta), en el ejemplo de más abajo, lo primero es la clase.
+ 
+*/
+
+    .spoiler {
+            color: rgb(37, 73, 114);
+            font-size: 25px;
+        }
+        #perro {
+        color: rgb(255, 0, 149);
+        font-size: 25px;
+    }
+    #gato {
+        background-color: seagreen;
+    }
+    #Heineken {color:rgb(82, 255, 47)}
+    
+   
